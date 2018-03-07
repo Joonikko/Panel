@@ -48,77 +48,78 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Button,x10 y250 w90 h30,User Accounts
 	Gui,Add,Button,x100 y250 w50 h30,Hosts
 	Gui,Add,Button,x150 y250 w70 h30,Host Folder
-	Gui,Add,Button,x415 y80 w55 h30	gMainNotepad,	Notepad
-	Gui,Add,Button,x470 y80 w80 h30 gMainWordpad,	Wordpad
+	Gui,Add,Button,x415 y80 w55 h30 gMainNotepad, Notepad
+	Gui,Add,Button,x470 y80 w80 h30 gMainWordpad, Wordpad
 	Gui,Add,Button,x410 y220 w120 h30 gINSW, List installed software
-	Gui,Add,Checkbox,x295 y130 	gAlwaysOnTop vAlwaysOnTopVar, Always on Top
+	Gui,Add,Checkbox,x295 y130  gAlwaysOnTop vAlwaysOnTopVar, Always on Top
 	Gui, Add, Button, x495 y259 w30 h23, OK
 	Gui, Add, ComboBox, x290 y260 w200 vComboBox, Action Center|- Action Center (Problem Reporting settings)|Add or Remove Programs|Administrative Tools|Automatic Updates|AutoPlay|Backup and Restore|Biometric Devices (if available)|BitLocker Drive Encryption (if available)|Bluetooth Devices (if available)|Color Management|Credential Manager|CSNW (Client Service for NetWare)|Date and Time|Default Programs|Desktop Gadgets|Device Manager|Devices and Printers|Display|Ease of Access Center|File Associations|Folder Options|Flash Player Settings Manager|Fonts|Game Controllers|Get Programs|Getting Started|HomeGroup|Indexing Options|Infrared (if available)|Intel Graphics (if available)|Internet Options|iSCSI Initiator|Java 7|Keyboard|Location and Other Sensors|Mail Setup (Outlook) (if available)|Mouse|Network and Sharing Center|Network Connections|Network Setup Wizard|Notification Area Icons|Offline Files|Parental Controls|Pen and Input Devices (if available)|Pen and Touch Settings|People Near Me|Performance Information and Tools|Performance Options|Personalization|- Personalization (Desktop Background)|- Personalization (Window Color and Appearance)|Phone and Modem|Power Options|- Power Options (Edit Plan settings)|- Power Options (System settings)|- Power Options (Create a Power Plan)|Printers and Faxes|Problem Reports and Solutions|Programs and Features|RealTek HD Audio Manager (if available)|Region and Language|- Region and Language (Location)|- Region and Language (Keyboards and Languages)|- Region and Language (Administrative)|RemoteApp and Desktop Connections|Scanners and Cameras|Scheduled Tasks|Screen Resolution|Sound|Sounds and Audio Devices|Speech Recognition Options|Speech Recognition|Sync Center|System|- System Properties (Advanced)|- System Properties (Computer Name)|- System Properties (Data Execution Prevention)|- System Properties (Hardware)|- System Properties (Performance)|- System Properties (Remote Access)|- System Properties (System Protection)|Tablet PC Settings (if available)|Taskbar and Start Menu|Text to Speech|Troubleshooting|User Accounts|Welcome Center|Windows Anytime Upgrade|Windows CardSpace|Windows Defender|Windows Firewall|Windows Marketplace|Windows Master Control Panel (All Tasks)|Windows Mobility Center|Windows Optional Features|Windows Sidebar Properties|Windows SideShow|Windows Update|- Windows Update (Change Settings)
 }
 
 { ; GUI INSTALLATION TAB
 	Gui,Tab, Install
-	Gui,Add,Checkbox,x10 y30 w90 h20 	vChrome,			GoogleChrome
-	Gui,Add,Checkbox,x120 y30 w70 h20 	vLibreOffice,		LibreOffice
-	Gui,Add,Checkbox,x230 y30 w70 h20 	vDropbox,			Dropbox
-	Gui,Add,Checkbox,x330 y30 w100 h20 	vRevoUninstaller,	Revo Uninstaller
-	Gui,Add,Checkbox,x470 y30 w80 h20 	vClassicShell,		Classic Shell
-	Gui,Add,Checkbox,x470 y50 w105 h20 	vClassicShellStart,	Classic Start
-	Gui,Add,Checkbox,x10 y50 w50 h20 	vOpera,				Opera
-	Gui,Add,Checkbox,x120 y50 w90 h20 	vAdobeReader,		AdobeReader
-	Gui,Add,Checkbox,x230 y50 w90 h20 	vGoogleDrive,		Google Drive
-	Gui,Add,Checkbox,x330 y50 w80 h20 	vNotepadplusplus,	Notepad++
-	Gui,Add,Checkbox,x10 y70 w60 h20 	vFirefox,			Firefox
-	Gui,Add,Checkbox,x120 y70 w80 h20 	vThunderbird,		Thunderbird
-	Gui,Add,Checkbox,x230 y70 w70 h20 	vOneDrive,			OneDrive
-	Gui,Add,Checkbox,x330 y70 w100 h20 	vProcessExplorer,	Process Explorer
-	Gui,Add,Checkbox,x120 y90 w80 h20 	vSumatraPDF,		SumatraPDF
-	Gui,Add,Checkbox,x330 y90 w70 h20	vFileZilla,			FileZilla
-	Gui,Add,Checkbox,x10 y100 w50 h20	v7zip,				7-Zip
-	Gui,Add,Checkbox,x230 y110 w50 h20	vGIMP,				GIMP
-	Gui,Add,Checkbox,x330 y110 w70 h20	vPutty,				Putty
-	Gui,Add,Checkbox,x10 y120 w60 h20	vSkype,				Skype
-	Gui,Add,Checkbox,x120 y120 w60 h20	vSpotify,			Spotify
-	Gui,Add,Checkbox,x230 y130 w60 h20	vPicasa,			Picasa
-	Gui,Add,Checkbox,x10 y140 w70 h20	vCCleaner,			CCleaner
-	Gui,Add,Checkbox,x120 y140 w80 h20	vFoobar,			Foobar2000
-	Gui,Add,Checkbox,x230 y150 w70 h20	vIrfanview,			IfranView
-	Gui,Add,Checkbox,x120 y160 w50 h20 	vVLC,				VLC
-	Gui,Add,Checkbox,x10 y170 w50 h20	vJava,				Java
-	Gui,Add,Checkbox,x230 y170 w70 h20	vPaint,				Paint.NET
-	Gui,Add,Checkbox,x120 y180 w70 h20	vKLite,				K-Lite Full
-	Gui,Add,Checkbox,x10 y190 w50 h20	vFlash,				Flash
-	Gui,Add,Checkbox,x230 y190 w70 h20	vInkscape,			Inkscape
-	Gui,Add,Checkbox,x120 y200 w70 h20	vQuicktime,			QuickTime
-	Gui,Add,Checkbox,x10 y210 w70 h20	vSilverlight,		Silverlight
-	Gui,Add,Checkbox,x120 y220 w80 h20	vCDburnerxp,		CDBurnerXP
-	Gui,Add,Checkbox,x230 y220 w50 h20	vMSE,				MSE
-	Gui,Add,Checkbox,x10 y240 w60 h20	vImDisk,			ImDisk
-	Gui,Add,Checkbox,x10 y260 w90 h20	vImDiskToolkit,		ImDisk Toolkit
-	Gui,Add,Checkbox,x120 y240 w60 h20	viTunes,			iTunes
-	Gui,Add,Checkbox,x230 y240 w90 h20	vMalwarebytes,		Malwarebytes
-	Gui,Add,Checkbox,x120 y260 w80 h20	vNaps2,				Naps2
-	Gui,Add,Checkbox,x230 y260 w60 h20	vAvast,				Avast
-	Gui,Add,Checkbox,x330 y180 w70 h20	vVC2008,			2008
-	Gui,Add,Checkbox,x330 y200 w70 h20	vVC2010,			2010
-	Gui,Add,Checkbox,x330 y220 w70 h20	vVC2012,			2012
-	Gui,Add,Checkbox,x330 y240 w70 h20	vVC2013,			2013
-	Gui,Add,Checkbox,x330 y260 w70 h20	vVC2015,			2015
-	Gui,Add,Checkbox,x400 y180 w70 h20	vDotnet35,			3.5
-	Gui,Add,Checkbox,x400 y200 w70 h20	vDotnet40,			4.0
-	Gui,Add,Checkbox,x400 y220 w70 h20	vDotnet45,			4.5
-	Gui,Add,Checkbox,x400 y240 w70 h20	vDotnet46,			4.6
-	Gui,Add,Checkbox,x400 y260 w70 h20	vDotnet461,			4.6.1
-	Gui,Add,Checkbox,x400 y160 w70 h20	vDotnetALL,			All
-	Gui,Add,Checkbox,x330 y160 w70 h20 	vRedistALL,			All
-	Gui,Add,Text,x330 y145 w70 h15,		VC Redist
-	Gui,Add,Text,x400 y145 w60 h15,		.NET
+	Gui,Add,Checkbox,x10 y30 w90 h20  	vChrome,      		GoogleChrome
+	Gui,Add,Checkbox,x120 y30 w70 h20   vLibreOffice,   	LibreOffice
+	Gui,Add,Checkbox,x230 y30 w70 h20   vDropbox,     		Dropbox
+	Gui,Add,Checkbox,x330 y30 w100 h20  vRevoUninstaller, 	Revo Uninstaller
+	Gui,Add,Checkbox,x470 y30 w80 h20   vClassicShell,    	Classic Shell
+	Gui,Add,Checkbox,x470 y50 w105 h20  vClassicShellStart, Classic Start
+	Gui,Add,Checkbox,x10 y50 w50 h20  	vOpera,       		Opera
+	Gui,Add,Checkbox,x120 y50 w90 h20   vAdobeReader,   	AdobeReader
+	Gui,Add,Checkbox,x230 y50 w90 h20   vGoogleDrive,   	Google Drive
+	Gui,Add,Checkbox,x330 y50 w80 h20   vNotepadplusplus, 	Notepad++
+	Gui,Add,Checkbox,x10 y70 w60 h20    vFirefox,     		Firefox
+	Gui,Add,Checkbox,x120 y70 w80 h20   vThunderbird,   	Thunderbird
+	Gui,Add,Checkbox,x230 y70 w70 h20   vOneDrive,      	OneDrive
+	Gui,Add,Checkbox,x330 y70 w100 h20  vProcessExplorer, 	Process Explorer
+	Gui,Add,Checkbox,x120 y90 w80 h20   vSumatraPDF,    	SumatraPDF
+	Gui,Add,Checkbox,x330 y90 w70 h20   vFileZilla,     	FileZilla
+	Gui,Add,Checkbox,x10 y100 w50 h20   v7zip,        		7-Zip
+	Gui,Add,Checkbox,x230 y110 w50 h20  vGIMP,        		GIMP
+	Gui,Add,Checkbox,x330 y110 w70 h20  vPutty,       		Putty
+	Gui,Add,Checkbox,x10 y120 w60 h20   vSkype,       		Skype
+	Gui,Add,Checkbox,x120 y120 w60 h20  vSpotify,     		Spotify
+	Gui,Add,Checkbox,x230 y130 w60 h20  vPicasa,      		Picasa
+	Gui,Add,Checkbox,x10 y140 w70 h20 	vCCleaner,    		CCleaner
+	Gui,Add,Checkbox,x120 y140 w80 h20  vFoobar,      		Foobar2000
+	Gui,Add,Checkbox,x230 y150 w70 h20  vIrfanview,   		IfranView
+	Gui,Add,Checkbox,x120 y160 w50 h20  vVLC,       		VLC
+	Gui,Add,Checkbox,x10 y170 w50 h20 	vJava,        		Java
+	Gui,Add,Checkbox,x230 y170 w70 h20  vPaint,       		Paint.NET
+	Gui,Add,Checkbox,x120 y180 w70 h20  vKLite,       		K-Lite Full
+	Gui,Add,Checkbox,x10 y190 w50 h20 	vFlash,       		Flash
+	Gui,Add,Checkbox,x230 y190 w70 h20  vInkscape,      	Inkscape
+	Gui,Add,Checkbox,x230 y210 w90 h20  vImageglass,      	ImageGlass
+	Gui,Add,Checkbox,x120 y200 w70 h20  vQuicktime,     	QuickTime
+	Gui,Add,Checkbox,x10 y210 w70 h20 	vSilverlight,   	Silverlight
+	Gui,Add,Checkbox,x120 y220 w80 h20  vCDburnerxp,    	CDBurnerXP
+	Gui,Add,Checkbox,x10 y240 w60 h20 	vImDisk,      		ImDisk
+	Gui,Add,Checkbox,x10 y260 w90 h20 	vImDiskToolkit,   	ImDisk Toolkit
+	Gui,Add,Checkbox,x120 y240 w60 h20  viTunes,      		iTune
+	Gui,Add,Checkbox,x120 y260 w80 h20  vNaps2,       		Naps2
+	;Gui,Add,Checkbox,x230 y260 w60 h20  vAvast,       		Avast
+	Gui,Add,Checkbox,x230 y240 w50 h20  vMSE,       		MSE
+	Gui,Add,Checkbox,x230 y260 w90 h20  vMalwarebytes,    	Malwarebytes
+	Gui,Add,Checkbox,x330 y180 w70 h20  vVC2008,      		2008
+	Gui,Add,Checkbox,x330 y200 w70 h20  vVC2010,      		2010
+	Gui,Add,Checkbox,x330 y220 w70 h20  vVC2012,      		2012
+	Gui,Add,Checkbox,x330 y240 w70 h20  vVC2013,      		2013
+	Gui,Add,Checkbox,x330 y260 w70 h20  vVC2015,      		2015
+	Gui,Add,Checkbox,x400 y180 w70 h20  vDotnet35,      	3.5
+	Gui,Add,Checkbox,x400 y200 w70 h20  vDotnet40,      	4.0
+	Gui,Add,Checkbox,x400 y220 w70 h20  vDotnet45,      	4.5
+	Gui,Add,Checkbox,x400 y240 w70 h20  vDotnet46,      	4.6
+	Gui,Add,Checkbox,x400 y260 w70 h20  vDotnet461,     	4.6.1
+	Gui,Add,Checkbox,x400 y160 w70 h20  vDotnetALL,     	All
+	Gui,Add,Checkbox,x330 y160 w70 h20  vRedistALL,     	All
+	Gui,Add,Text,x330 y145 w70 h15,   	VC Redist
+	Gui,Add,Text,x400 y145 w60 h15,   	.NET
 
-	Gui,Add,Button,x470 y170 w80 h40	gDefaultChoco,		Default Install
-	Gui,Add,Button,x470 y90 w80 h30 	gInstallChoco2,		CMD Install
-	Gui,Add,Button,x470 y120 w80 h30	gInstallChoco1,		PS Install
-	Gui,Add,Button,x470 y210 w80 h30	gUpdateChoco,		Update All
-	Gui,Add,Button,x470 y240 w80 h40,						Install
+	Gui,Add,Button,x470 y170 w80 h40  gDefaultChoco,    Default Install
+	Gui,Add,Button,x470 y90 w80 h30   gInstallChoco2,   CMD Install
+	Gui,Add,Button,x470 y120 w80 h30  gInstallChoco1,   PS Install
+	Gui,Add,Button,x470 y210 w80 h30  gUpdateChoco,   	Update All
+	Gui,Add,Button,x470 y240 w80 h40,           				Install
 }
 
 { ; GUI INFO TAB
@@ -196,7 +197,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 					. "Modell:`t`t"     Win32_VC[2]
 
 
-	Gui, Add, Text, x450 y40, Panel v1.0
+	Gui, Add, Text, x450 y40, Panel v1.01
 }
 
 { ; GUI HOTKEYS TAB
@@ -243,7 +244,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, xp yp+15, Alt+W  -  Control panel
 	Gui, Add, Text, xp yp+15, Alt+D  -  Task Manager
 	Gui, Add, Text, xp yp+15, Alt+F1  -  Turn screen off
-
 }
 
 { ; Global Variables
@@ -283,8 +283,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 	}
 
-	; Alt Drag
-	{
+{ ; Alt Drag
 	Drag:
 	return
 
@@ -427,7 +426,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 
 	; ButtonHtop:
-	; 	Run %A_ScriptDir%/htopmini.exe
+	;   Run %A_ScriptDir%/htopmini.exe
 	; return
 
 	MainNotepad:
@@ -578,6 +577,9 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	If AdobeReader = 1
 	myListOfPrograms .= " adobereader"
 
+	If SumatraPDF = 1
+	myListOfPrograms .= " sumatrapdf"
+
 	If GoogleDrive = 1
 	myListOfPrograms .= " googledrive"
 
@@ -640,6 +642,9 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 
 	If inkscape = 1
 	myListOfPrograms .= " inkscape"
+
+	If imageglass = 1
+	myListOfPrograms .= " imageglass"
 
 	If quicktime = 1
 	myListOfPrograms .= " quicktime"
@@ -759,7 +764,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 
 	; 2ButtonZ:\:
-	; 	run Z:\
+	;   run Z:\
 	; return
 
 	2ButtonProg:
@@ -842,15 +847,15 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 
 
 	; !1::
-	; 	DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WinDir . "\Web\Screen\img105.jpg", UInt, 1)
+	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WinDir . "\Web\Screen\img105.jpg", UInt, 1)
 	; return
 
 	; !2::
-	; 	DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp0.png", UInt, 1)
+	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp0.png", UInt, 1)
 	; return
 
 	; !3::
-	; 	DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp1.jpg", UInt, 1)
+	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp1.jpg", UInt, 1)
 	; return
 
 	; !s::Run %A_ScriptDir%/htopmini.exe
@@ -884,13 +889,13 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 
 	; F10::
-	; 	Run Removable.exe
+	;   Run Removable.exe
 	; return
 
 	; F12::
-	; 	FileRead, Clipboard, %A_ScriptDir%/hosts.txt
-	; 	ClipWait
-	; 	clipboard = %clipboard%
+	;   FileRead, Clipboard, %A_ScriptDir%/hosts.txt
+	;   ClipWait
+	;   clipboard = %clipboard%
 	; return
 
 	Escape::Exitapp
