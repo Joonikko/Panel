@@ -49,24 +49,15 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 
 **File information**
 
+
+Panel 1.01
+
 - Panel.exe
-	- [virustotal](https://www.virustotal.com/#/file/982c9c65fb19a0be5b7a71fd49c69b3f33cf39fa3e76de5efa9ab7f66983637f/detection)
-	- md5: `54a31a32052de44b61a4aa3ab8367940` 
-	- SHA-1: `505ac76809abd2144237bc707ea6b14dc4489ad6` 
-	- SHA256: `982c9c65fb19a0be5b7a71fd49c69b3f33cf39fa3e76de5efa9ab7f66983637f` 
+	- [virustotal](https://www.virustotal.com/#/file/9f5f1a5dcb6c6c54b98a26dc20c238639425089a25fd7016d061bb347658792b/detection)
+	- SHA256: `9f5f1a5dcb6c6c54b98a26dc20c238639425089a25fd7016d061bb347658792b` 
 - Panel_32b.exe
-	- [Virustotal](https://www.virustotal.com/#/file/cb660d0c2272a21423b6bdfae222eb1198f6b971bbf33947862e18863d6422b4/detection)
-	- md5: `1d8752a08effe0e633d8542a1827a0a9` 
-	- SHA-1: `0df3300bc8bfa484f59faa91cbc7d2e461881109` 
-	- SHA256: `cb660d0c2272a21423b6bdfae222eb1198f6b971bbf33947862e18863d6422b4` 
-- Panel.ahk
-	- [Virustotal](https://www.virustotal.com/#/file/2bfc1baf8943b43048e2718dfb5e8883743ec056af38ef22bb702aea67155cb7/detection)
-	- md5: `372ac1338ad62e9ea2a3ed313ab90e4b` 
-	- SHA-1: `c7217372ef3c8ebba4cff89e20a3954e4b8d0549` 
-	- SHA256: `2bfc1baf8943b43048e2718dfb5e8883743ec056af38ef22bb702aea67155cb7` 
-
-
-
+	- [Virustotal](https://www.virustotal.com/#/file/9fa15c6e5bb0da4125b72c1fe70f121859b1493dfbaae3f3b3ec885c3adaa5d9/detection)
+	- SHA256: `9fa15c6e5bb0da4125b72c1fe70f121859b1493dfbaae3f3b3ec885c3adaa5d9` 
 
 
 
