@@ -224,6 +224,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, xp yp+15, Alt+W  -  Small icons
 	Gui, Add, Text, xp yp+15, Alt+E  -  Content
 	Gui, Add, Text, xp yp+15, Alt+A  -  Extra large icons
+	Gui, Add, Text, xp yp+15, Alt+N  -  Show/Hide sidebar
 
 	Gui, Font, Bold
 	Gui, Add, Text, x350 y30, Panel
@@ -830,6 +831,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	!W::Send ^+4 ; Small Icons
 	!E::Send ^+8 ; Content
 	!a::Send ^+1 ; Extra large icons
+	!n::Send !d!vn{enter}ln
 }
 
 { ; HOTKEYS - Panel Specific
