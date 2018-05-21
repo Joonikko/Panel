@@ -1,6 +1,16 @@
-SetWorkingDir %A_ScriptDir%
+; Panel - The Missing GUI for Windows
+; https://github.com/joonikko/panel
+
 #SingleInstance force
 #IfWinNotActive ahk_class MultitaskingViewFrame
+#NoEnv
+
+SendMode Input
+SetWorkingDir %A_ScriptDir%
+SetWinDelay,2
+ws_MinHeight = 25
+CoordMode,Mouse
+OnExit, GuiClose
 
 Gui,Show, w560 h290, Panel
 Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
@@ -8,118 +18,133 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 { ; GUI MAIN TAB
 	Gui,Tab, Main
 	Gui,Add,Button,x10 y40 w50 h30,CMD
-	Gui,Add,Button,x60 y40 w70 h30,PowerShell
-	Gui,Add,Button,x130 y40 w50 h30,Control
-	Gui,Add,Button,x180 y40 w40 h30,IE
+	Gui,Add,Button,x+0.5 y40 w70 h30,PowerShell
+	Gui,Add,Button,x+0.5 y40 w50 h30,Control
+	Gui,Add,Button,x+0.5 y40 w40 h30,IE
+	Gui,Add,Button,x10 y70 w80 h30,Task Manager
+	Gui,Add,Button,x+0.5 y70 w60 h30,msconfig
+	Gui,Add,Button,x+0.5 y70 w43 h30,Edge
+
 	Gui,Add,Button,x290 y40 w80 h40,Log Out
 	Gui,Add,Button,x370 y40 w100 h40,Reboot
 	Gui,Add,Button,x470 y40 w80 h40,Shut Down
-	Gui,Add,Button,x10 y70 w80 h30,Task Manager
-	Gui,Add,Button,x90 y70 w60 h30,msconfig
-	Gui,Add,Button,x150 y70 w43 h30,Edge
-	; Gui,Add,Button,x193 y70 w35 h30,htop
-	Gui,Add,Button,x290 y80 w40 h30,Mute
-	Gui,Add,Button,x330 y80 w40 h30,Vol 30
-	Gui,Add,Button,x370 y80 w45 h30,Vol 100
+	Gui,Add,Button,x290 y90 w40 h27,Mute
+	Gui,Add,Button,x+0.5 y90 w40 h27,Vol 30
+	Gui,Add,Button,x+0.5 y90 w45 h27,Vol 100
+	Gui,Add,Button,x+2 y90 w63 h27 gMainNotepad, Notepad
+	Gui,Add,Button,x+0.5 y90 w70 h27 gMainWordpad, Wordpad
+
 	Gui,Add,Text,x10 y110 w70 h20,Control Panel
 	Gui,Add,Button,x10 y130 w40 h30,Time
-	Gui,Add,Button,x50 y130 w60 h30,Network
-	Gui,Add,Button,x110 y130 w60 h30,Update
-	Gui,Add,Button,x170 y130 w60 h30,Language
+	Gui,Add,Button,x+0.5 y130 w60 h30,Network
+	Gui,Add,Button,x+0.5 y130 w60 h30,Update
+	Gui,Add,Button,x+0.5 y130 w60 h30,Language
 	Gui,Add,Button,x10 y160 w60 h30,System
-	Gui,Add,Button,x70 y160 w50 h30,Display
-	Gui,Add,Button,x120 y160 w70 h30,Power Plan
-	Gui,Add,Button,x190 y160 w50 h30,Desktop
-	Gui,Add,Button,x290 y160 w40 h30,PC
-	Gui,Add,Button,x330 y160 w40 h30,C:\
-	Gui,Add,Button,x370 y160 w40 h30,Prog
-	Gui,Add,Button,x410 y160 w70 h30,User Folder
-	Gui,Add,Button,x480 y160 w60 h30,AppData
+	Gui,Add,Button,x+0.5 y160 w50 h30,Display
+	Gui,Add,Button,x+0.5 y160 w70 h30,Power Plan
+	Gui,Add,Button,x+0.5 y160 w50 h30,Desktop
 	Gui,Add,Button,x10 y190 w90 h30,Internet Settings
-	Gui,Add,Button,x100 y190 w100 h30,Device Manager
-	Gui,Add,Button,x200 y190 w60 h30,Devices
-	Gui,Add,Button,x290 y190 w100 h30,Program Files x86
-	Gui,Add,Button,x390 y190 w100 h30,Program Files x64
+	Gui,Add,Button,x+0.5 y190 w100 h30,Device Manager
+	Gui,Add,Button,x+0.5 y190 w60 h30,Devices
 	Gui,Add,Button,x10 y220 w60 h30,Programs
-	Gui,Add,Button,x70 y220 w100 h30,Default Programs
-	Gui,Add,Button,x170 y220 w50 h30,Sound
-	Gui,Add,Button,x290 y220 w50 h30,Start
-	Gui,Add,Button,x340 y220 w70 h30,User Start
+	Gui,Add,Button,x+0.5 y220 w100 h30,Default Programs
+	Gui,Add,Button,x+0.5 y220 w50 h30,Sound
 	Gui,Add,Button,x10 y250 w90 h30,User Accounts
-	Gui,Add,Button,x100 y250 w50 h30,Hosts
-	Gui,Add,Button,x150 y250 w70 h30,Host Folder
-	Gui,Add,Button,x415 y80 w55 h30 gMainNotepad, Notepad
-	Gui,Add,Button,x470 y80 w80 h30 gMainWordpad, Wordpad
-	Gui,Add,Button,x410 y220 w120 h30 gINSW, List installed software
+	Gui,Add,Button,x+0.5 y250 w50 h30,Hosts
+	Gui,Add,Button,x+0.5 y250 w70 h30,Host Folder
+
+	; Folders
+	Gui,Add,Button,x290 y160 w40 h30,PC
+	Gui,Add,Button,x+0.5 y160 w40 h30,C:\
+	Gui,Add,Button,x+0.5 y160 w40 h30,Prog
+	Gui,Add,Button,x+0.5 y160 w70 h30,User Folder
+	Gui,Add,Button,x+0.5 y160 w60 h30,AppData
+	Gui,Add,Button,x290 y190 w100 h30,Program Files x86
+	Gui,Add,Button,x+0.5 y190 w100 h30,Program Files x64
+	Gui,Add,Button,x290 y220 w50 h30,Start
+	Gui,Add,Button,x+0.5 y220 w70 h30,User Start
+	Gui,Add,Button,x+0.5 y220 w120 h30 gINSW, List installed software
+
 	Gui,Add,Checkbox,x295 y130  gAlwaysOnTop vAlwaysOnTopVar, Always on Top
 	Gui, Add, Button, x495 y259 w30 h23, OK
 	Gui, Add, ComboBox, x290 y260 w200 vComboBox, Action Center|- Action Center (Problem Reporting settings)|Add or Remove Programs|Administrative Tools|Automatic Updates|AutoPlay|Backup and Restore|Biometric Devices (if available)|BitLocker Drive Encryption (if available)|Bluetooth Devices (if available)|Color Management|Credential Manager|CSNW (Client Service for NetWare)|Date and Time|Default Programs|Desktop Gadgets|Device Manager|Devices and Printers|Display|Ease of Access Center|File Associations|Folder Options|Flash Player Settings Manager|Fonts|Game Controllers|Get Programs|Getting Started|HomeGroup|Indexing Options|Infrared (if available)|Intel Graphics (if available)|Internet Options|iSCSI Initiator|Java 7|Keyboard|Location and Other Sensors|Mail Setup (Outlook) (if available)|Mouse|Network and Sharing Center|Network Connections|Network Setup Wizard|Notification Area Icons|Offline Files|Parental Controls|Pen and Input Devices (if available)|Pen and Touch Settings|People Near Me|Performance Information and Tools|Performance Options|Personalization|- Personalization (Desktop Background)|- Personalization (Window Color and Appearance)|Phone and Modem|Power Options|- Power Options (Edit Plan settings)|- Power Options (System settings)|- Power Options (Create a Power Plan)|Printers and Faxes|Problem Reports and Solutions|Programs and Features|RealTek HD Audio Manager (if available)|Region and Language|- Region and Language (Location)|- Region and Language (Keyboards and Languages)|- Region and Language (Administrative)|RemoteApp and Desktop Connections|Scanners and Cameras|Scheduled Tasks|Screen Resolution|Sound|Sounds and Audio Devices|Speech Recognition Options|Speech Recognition|Sync Center|System|- System Properties (Advanced)|- System Properties (Computer Name)|- System Properties (Data Execution Prevention)|- System Properties (Hardware)|- System Properties (Performance)|- System Properties (Remote Access)|- System Properties (System Protection)|Tablet PC Settings (if available)|Taskbar and Start Menu|Text to Speech|Troubleshooting|User Accounts|Welcome Center|Windows Anytime Upgrade|Windows CardSpace|Windows Defender|Windows Firewall|Windows Marketplace|Windows Master Control Panel (All Tasks)|Windows Mobility Center|Windows Optional Features|Windows Sidebar Properties|Windows SideShow|Windows Update|- Windows Update (Change Settings)
+
 }
 
 { ; GUI INSTALLATION TAB
 	Gui,Tab, Install
+	; COL 1
 	Gui,Add,Checkbox,x10 y30 w90 h20  	vChrome,      		GoogleChrome
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20  vOpera,       		Opera
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  vFirefox,     		Firefox
+	Gui,Add,Checkbox,x10 y+10 w50 h20  v7zip,        		7-Zip
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  vSkype,       		Skype
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 	vCCleaner,    		CCleaner
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 	vJava,        		Java
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 	vFlash,       		Flash
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 	vSilverlight,   	Silverlight
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20 	vImDisk,      		ImDisk
+	Gui,Add,Checkbox,x10 y+0.5 w90 h20 	vImDiskToolkit,   	ImDisk Toolkit
+
+	; COL 2
 	Gui,Add,Checkbox,x120 y30 w70 h20   vLibreOffice,   	LibreOffice
+	Gui,Add,Checkbox,x120 y+0.5 w90 h20   vAdobeReader,   	AdobeReader
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   vThunderbird,   	Thunderbird
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   vSumatraPDF,    	SumatraPDF
+	Gui,Add,Checkbox,x120 y+10 w60 h20  vSpotify,     		Spotify
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  vFoobar,      		Foobar2000
+	Gui,Add,Checkbox,x120 y+0.5 w50 h20  vVLC,       		VLC
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  vKLite,       		K-Lite Full
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  vQuicktime,     	QuickTime
+	Gui,Add,Checkbox,x120 y+0.5 w60 h20  viTunes,      		iTunes
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  vNaps2,       		Naps2
+
+	;COL 3
 	Gui,Add,Checkbox,x230 y30 w70 h20   vDropbox,     		Dropbox
-	Gui,Add,Checkbox,x330 y30 w100 h20  vRevoUninstaller, 	Revo Uninstaller
-	Gui,Add,Checkbox,x470 y30 w80 h20   vClassicShell,    	Classic Shell
-	Gui,Add,Checkbox,x470 y50 w105 h20  vClassicShellStart, Classic Start
-	Gui,Add,Checkbox,x10 y50 w50 h20  	vOpera,       		Opera
-	Gui,Add,Checkbox,x120 y50 w90 h20   vAdobeReader,   	AdobeReader
-	Gui,Add,Checkbox,x230 y50 w90 h20   vGoogleDrive,   	Google Drive
-	Gui,Add,Checkbox,x330 y50 w80 h20   vNotepadplusplus, 	Notepad++
-	Gui,Add,Checkbox,x10 y70 w60 h20    vFirefox,     		Firefox
-	Gui,Add,Checkbox,x120 y70 w80 h20   vThunderbird,   	Thunderbird
-	Gui,Add,Checkbox,x230 y70 w70 h20   vOneDrive,      	OneDrive
-	Gui,Add,Checkbox,x330 y70 w100 h20  vProcessExplorer, 	Process Explorer
-	Gui,Add,Checkbox,x120 y90 w80 h20   vSumatraPDF,    	SumatraPDF
-	Gui,Add,Checkbox,x330 y90 w70 h20   vFileZilla,     	FileZilla
-	Gui,Add,Checkbox,x10 y100 w50 h20   v7zip,        		7-Zip
-	Gui,Add,Checkbox,x230 y110 w50 h20  vGIMP,        		GIMP
-	Gui,Add,Checkbox,x330 y110 w70 h20  vPutty,       		Putty
-	Gui,Add,Checkbox,x10 y120 w60 h20   vSkype,       		Skype
-	Gui,Add,Checkbox,x120 y120 w60 h20  vSpotify,     		Spotify
-	Gui,Add,Checkbox,x230 y130 w60 h20  vPicasa,      		Picasa
-	Gui,Add,Checkbox,x10 y140 w70 h20 	vCCleaner,    		CCleaner
-	Gui,Add,Checkbox,x120 y140 w80 h20  vFoobar,      		Foobar2000
-	Gui,Add,Checkbox,x230 y150 w70 h20  vIrfanview,   		IfranView
-	Gui,Add,Checkbox,x120 y160 w50 h20  vVLC,       		VLC
-	Gui,Add,Checkbox,x10 y170 w50 h20 	vJava,        		Java
-	Gui,Add,Checkbox,x230 y170 w70 h20  vPaint,       		Paint.NET
-	Gui,Add,Checkbox,x120 y180 w70 h20  vKLite,       		K-Lite Full
-	Gui,Add,Checkbox,x10 y190 w50 h20 	vFlash,       		Flash
-	Gui,Add,Checkbox,x230 y190 w70 h20  vInkscape,      	Inkscape
-	Gui,Add,Checkbox,x230 y210 w90 h20  vImageglass,      	ImageGlass
-	Gui,Add,Checkbox,x120 y200 w70 h20  vQuicktime,     	QuickTime
-	Gui,Add,Checkbox,x10 y210 w70 h20 	vSilverlight,   	Silverlight
-	Gui,Add,Checkbox,x120 y220 w80 h20  vCDburnerxp,    	CDBurnerXP
-	Gui,Add,Checkbox,x10 y240 w60 h20 	vImDisk,      		ImDisk
-	Gui,Add,Checkbox,x10 y260 w90 h20 	vImDiskToolkit,   	ImDisk Toolkit
-	Gui,Add,Checkbox,x120 y240 w60 h20  viTunes,      		iTune
-	Gui,Add,Checkbox,x120 y260 w80 h20  vNaps2,       		Naps2
-	;Gui,Add,Checkbox,x230 y260 w60 h20  vAvast,       		Avast
-	Gui,Add,Checkbox,x230 y240 w50 h20  vMSE,       		MSE
-	Gui,Add,Checkbox,x230 y260 w90 h20  vMalwarebytes,    	Malwarebytes
-	Gui,Add,Checkbox,x330 y180 w70 h20  vVC2008,      		2008
-	Gui,Add,Checkbox,x330 y200 w70 h20  vVC2010,      		2010
-	Gui,Add,Checkbox,x330 y220 w70 h20  vVC2012,      		2012
-	Gui,Add,Checkbox,x330 y240 w70 h20  vVC2013,      		2013
-	Gui,Add,Checkbox,x330 y260 w70 h20  vVC2015,      		2015
-	Gui,Add,Checkbox,x400 y180 w70 h20  vDotnet35,      	3.5
-	Gui,Add,Checkbox,x400 y200 w70 h20  vDotnet40,      	4.0
-	Gui,Add,Checkbox,x400 y220 w70 h20  vDotnet45,      	4.5
-	Gui,Add,Checkbox,x400 y240 w70 h20  vDotnet46,      	4.6
-	Gui,Add,Checkbox,x400 y260 w70 h20  vDotnet461,     	4.6.1
-	Gui,Add,Checkbox,x400 y160 w70 h20  vDotnetALL,     	All
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20   vGoogleDrive,   	Google Drive
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20   vOneDrive,      	OneDrive
+	Gui,Add,Checkbox,x230 y+10 w50 h20  vGIMP,        		GIMP
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vIrfanview,   		IfranView
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vPaint,       		Paint.NET
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vInkscape,      	Inkscape
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  vImageglass,      	ImageGlass
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  vMalwarebytes,    	Malwarebytes
+	Gui,Add,Checkbox,x230 y+0.5 w100 h20  vRevoUninstaller, 	Revo Unins.
+
+	; COL 4
+	Gui,Add,Checkbox,x330 y30 w80 h20   vNotepadplusplus, 	Notepad++
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  vVisualStudioCode,	VS Code
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  vProcessExplorer, 	Process Explorer
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20   vFileZilla,     	FileZilla
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vPutty,       		Putty
+
 	Gui,Add,Checkbox,x330 y160 w70 h20  vRedistALL,     	All
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2008,      		2008
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2010,      		2010
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2012,      		2012
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2013,      		2013
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2015,      		2015
+
+	Gui,Add,Checkbox,x400 y160 w70 h20  vDotnetALL,     	All
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet35,      	3.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet40,      	4.0
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet45,      	4.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet46,      	4.6
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet461,     	4.6.1
+
 	Gui,Add,Text,x330 y145 w70 h15,   	VC Redist
 	Gui,Add,Text,x400 y145 w60 h15,   	.NET
 
-	Gui,Add,Button,x470 y170 w80 h40  gDefaultChoco,    Default Install
-	Gui,Add,Button,x470 y90 w80 h30   gInstallChoco2,   CMD Install
-	Gui,Add,Button,x470 y120 w80 h30  gInstallChoco1,   PS Install
-	Gui,Add,Button,x470 y210 w80 h30  gUpdateChoco,   	Update All
-	Gui,Add,Button,x470 y240 w80 h40,           				Install
+	Gui,Add,Button,x470 y170 w80 h40  gDefaultChoco,    	Default Install
+	Gui,Add,Button,x470 y90 w80 h30   gInstallChoco2,   	CMD Install
+	Gui,Add,Button,x470 y120 w80 h30  gInstallChoco1,   	PS Install
+	Gui,Add,Button,x470 y210 w80 h30  gUpdateChoco,   		Update All
+	Gui,Add,Button,x470 y240 w80 h40,           			Install
+
+	; COL 5
+	Gui,Add,Checkbox,x470 y30 w80 h20   vClassicShell,    	Classic Shell
+	Gui,Add,Checkbox,x470 y50 w105 h20  vClassicShellStart, Classic Start
+
 }
 
 { ; GUI INFO TAB
@@ -165,8 +190,11 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	if (BuildNum = 16299){
 		VersionNumber = 1709 Fall Creators Update (Released 2017-10-17)
 		}
-	if (BuildNum > 16299){
-		VersionNumber = >1709
+	if (BuildNum = 17134){
+		VersionNumber = 1803 April 2018 Update (Released 2018-04-16)
+		}
+	if (BuildNum > 17134){
+		VersionNumber = >17134
 		}
 
 	Gui, Font, Bold
@@ -196,8 +224,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
 					. "Modell:`t`t"     Win32_VC[2]
 
-
-	Gui, Add, Text, x450 y40, Panel v1.01
+	Gui, Add, Text, x450 y40, Panel v1.02
 }
 
 { ; GUI HOTKEYS TAB
@@ -206,55 +233,52 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Font, Bold
 	Gui, Add, Text, x10 y30, Global hotkeys
 	Gui, Font, Norm
-	Gui, Add, Text, xm yp+15, Alt+§  -  WindowShade
-	Gui, Add, Text, xm yp+15, Alt+L/R Mouse  -  Alt-drag
-	Gui, Add, Text, xm yp+15, Ctrl+Q  -  Send Alt-F4
-	Gui, Add, Text, xm yp+15, Ctrl+H  -  Minimize window
+	Gui, Add, Text, xm y+4, Alt+<  -  WindowShade
+	Gui, Add, Text, xm y+4, Alt+Â§  -  Switch windows
+	Gui, Add, Text, xm y+4, Alt+L/R Mouse  -  Alt-drag
+	Gui, Add, Text, xm y+4, Ctrl+Q  -  Send Alt-F4
+	; Gui, Add, Text, xm y+4, Ctrl+H  -  Minimize window
 
 	Gui, Font, Bold
-	Gui, Add, Text, x200 y30, Explorer
+	Gui, Add, Text, x170 y30, Explorer
 	Gui, Font, Norm
-	Gui, Add, Text, xp yp+15, F1     -  Up directory
-	Gui, Add, Text, xp yp+15, Alt+1  -  large icons
-	Gui, Add, Text, xp yp+15, Alt+2  -  List
-	Gui, Add, Text, xp yp+15, Alt+3  -  Details
-	Gui, Add, Text, xp yp+15, Alt+4  -  Tiles
-
-	Gui, Add, Text, xp yp+15, Alt+Q  -  Medium icons
-	Gui, Add, Text, xp yp+15, Alt+W  -  Small icons
-	Gui, Add, Text, xp yp+15, Alt+E  -  Content
-	Gui, Add, Text, xp yp+15, Alt+A  -  Extra large icons
-	Gui, Add, Text, xp yp+15, Alt+N  -  Show/Hide sidebar
+	Gui, Add, Text, xp y+4, F1     -  Up directory
+	Gui, Add, Text, xp y+4, Alt+1  -  large icons
+	Gui, Add, Text, xp y+4, Alt+2  -  List
+	Gui, Add, Text, xp y+4, Alt+3  -  Details
+	Gui, Add, Text, xp y+4, Alt+4  -  Tiles
+	Gui, Add, Text, xp y+4, Alt+Q  -  Medium icons
+	Gui, Add, Text, xp y+4, Alt+W  -  Small icons
+	Gui, Add, Text, xp y+4, Alt+E  -  Content
+	Gui, Add, Text, xp y+4, Alt+A  -  Extra large icons
+	Gui, Add, Text, xp y+4, Alt+N  -  Show/Hide sidebar
 
 	Gui, Font, Bold
 	Gui, Add, Text, x350 y30, Panel
 	Gui, Font, Norm
-	Gui, Add, Text, xp yp+15, F1  -  Cmd.exe
-	Gui, Add, Text, xp yp+15, F2  -  Run -prompt
-	; Gui, Add, Text, xp yp+15, F3  -
-	; Gui, Add, Text, xp yp+15, F4  -
-	Gui, Add, Text, xp yp+15, F5  -  Reload
-	Gui, Add, Text, xp yp+15, F6  -  Reload as admin
-	Gui, Add, Text, xp yp+15, F7  -  WUMT
-	Gui, Add, Text, xp yp+15, F8  -  CCleaner
-	Gui, Add, Text, xp yp+15, F9  -  Windows Update
-	; Gui, Add, Text, xp yp+15, F10  -
-	; Gui, Add, Text, xp yp+15, F11  -
-	; Gui, Add, Text, xp yp+15, F12  -
-	Gui, Add, Text, xp yp+15, Alt+Q  -  UAC Settings
-	Gui, Add, Text, xp yp+15, Alt+W  -  Control panel
-	Gui, Add, Text, xp yp+15, Alt+D  -  Task Manager
-	Gui, Add, Text, xp yp+15, Alt+F1  -  Turn screen off
+	Gui, Add, Text, xp y+4, F1  -  Cmd.exe
+	Gui, Add, Text, xp y+4, F2  -  Run -prompt
+	; Gui, Add, Text, xp y+4, F3  -
+	; Gui, Add, Text, xp y+4, F4  -
+	Gui, Add, Text, xp y+4, F5  -  Reload
+	Gui, Add, Text, xp y+4, F6  -  Reload as admin
+	Gui, Add, Text, xp y+4, F7  -  WUMT
+	Gui, Add, Text, xp y+4, F8  -  CCleaner
+	Gui, Add, Text, xp y+4, F9  -  Windows Update
+	; Gui, Add, Text, xp y+4, F10  -
+	; Gui, Add, Text, xp y+4, F11  -
+	; Gui, Add, Text, xp y+4, F12  -
+	Gui, Add, Text, xp y+4, Alt+Q  -  UAC Settings
+	Gui, Add, Text, xp y+4, Alt+W  -  Control panel
+	Gui, Add, Text, xp y+4, Alt+D  -  Task Manager
+	Gui, Add, Text, xp y+4, Alt+F1  -  Turn screen off
+
 }
 
-{ ; Global Variables
-	ws_MinHeight = 25
-	SetWinDelay,2
-	CoordMode,Mouse
-}
+return
 
 { ; WindowShade
-	!§::
+	!SC056::
 	WinGet, ws_ID, ID, A
 	Loop, Parse, ws_IDList, |
 	{
@@ -282,97 +306,9 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	}
 	ExitApp
 	return
-	}
-
-{ ; Alt Drag
-	Drag:
-	return
-
-	!LButton::
-	If DoubleAlt
-	{
-			MouseGetPos,,,KDE_id
-			; This message is mostly equivalent to WinMinimize,
-			; but it avoids a bug with PSPad.
-			PostMessage,0x112,0xf020,,,ahk_id %KDE_id%
-			DoubleAlt := false
-			return
-	}
-	; Get the initial mouse position and window id, and
-	; abort if the window is maximized.
-	MouseGetPos,KDE_X1,KDE_Y1,KDE_id
-	WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
-	If KDE_Win
-			return
-	; Get the initial window position.
-	WinGetPos,KDE_WinX1,KDE_WinY1,,,ahk_id %KDE_id%
-	Loop
-	{
-			GetKeyState,KDE_Button,LButton,P ; Break if button has been released.
-			If KDE_Button = U
-					break
-			MouseGetPos,KDE_X2,KDE_Y2 ; Get the current mouse position.
-			KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
-			KDE_Y2 -= KDE_Y1
-			KDE_WinX2 := (KDE_WinX1 + KDE_X2) ; Apply this offset to the window position.
-			KDE_WinY2 := (KDE_WinY1 + KDE_Y2)
-			WinMove,ahk_id %KDE_id%,,%KDE_WinX2%,%KDE_WinY2% ; Move the window to the new position.
-	}
-	return
-
-	!RButton::
-	If DoubleAlt
-	{
-			MouseGetPos,,,KDE_id
-			; Toggle between maximized and restored state.
-			WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
-			If KDE_Win
-					WinRestore,ahk_id %KDE_id%
-			Else
-					WinMaximize,ahk_id %KDE_id%
-			DoubleAlt := false
-			return
-	}
-	; Get the initial mouse position and window id, and
-	; abort if the window is maximized.
-	MouseGetPos,KDE_X1,KDE_Y1,KDE_id
-	WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
-	If KDE_Win
-			return
-	; Get the initial window position and size.
-	WinGetPos,KDE_WinX1,KDE_WinY1,KDE_WinW,KDE_WinH,ahk_id %KDE_id%
-	; Define the window region the mouse is currently in.
-	; The four regions are Up and Left, Up and Right, Down and Left, Down and Right.
-	If (KDE_X1 < KDE_WinX1 + KDE_WinW / 2)
-		 KDE_WinLeft := 1
-	Else
-		 KDE_WinLeft := -1
-	If (KDE_Y1 < KDE_WinY1 + KDE_WinH / 2)
-		 KDE_WinUp := 1
-	Else
-		 KDE_WinUp := -1
-	Loop
-	{
-			GetKeyState,KDE_Button,RButton,P ; Break if button has been released.
-			If KDE_Button = U
-					break
-			MouseGetPos,KDE_X2,KDE_Y2 ; Get the current mouse position.
-			; Get the current window position and size.
-			WinGetPos,KDE_WinX1,KDE_WinY1,KDE_WinW,KDE_WinH,ahk_id %KDE_id%
-			KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
-			KDE_Y2 -= KDE_Y1
-			; Then, act according to the defined region.
-			WinMove,ahk_id %KDE_id%,, KDE_WinX1 + (KDE_WinLeft+1)/2*KDE_X2  ; X of resized window
-															, KDE_WinY1 +   (KDE_WinUp+1)/2*KDE_Y2  ; Y of resized window
-															, KDE_WinW  -     KDE_WinLeft  *KDE_X2  ; W of resized window
-															, KDE_WinH  -       KDE_WinUp  *KDE_Y2  ; H of resized window
-			KDE_X1 := (KDE_X2 + KDE_X1) ; Reset the initial position for the next iteration.
-			KDE_Y1 := (KDE_Y2 + KDE_Y1)
-	}
-	return
 }
 
-{ ; BUTTON COMMANDS Main
+{ ; BUTTON COMMANDS - Main
 
 	ButtonCMD:
 		Run *runas cmd
@@ -425,10 +361,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	ButtonShutDown:
 		Run *runas %comspec% /k shutdown -t 0 -s
 	return
-
-	; ButtonHtop:
-	;   Run %A_ScriptDir%/htopmini.exe
-	; return
 
 	MainNotepad:
 		run notepad
@@ -524,12 +456,8 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 		Run, explorer C:\Users\%A_UserName%
 	return
 
-	ButtonApp:
-		Run, explorer C:\Users\%A_UserName%\AppData
-	return
-
 	ButtonAppData:
-		Run %appdata%
+		Run, explorer C:\Users\%A_UserName%\AppData
 	return
 
 	ButtonProgramFilesx86:
@@ -579,13 +507,16 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	myListOfPrograms .= " adobereader"
 
 	If SumatraPDF = 1
-	myListOfPrograms .= " sumatrapdf"
+	myListOfPrograms .= " sumatrapdf.install"
 
 	If GoogleDrive = 1
 	myListOfPrograms .= " googledrive"
 
 	If notepadplusplus = 1
-	myListOfPrograms .= " notepadplusplus"
+	myListOfPrograms .= " notepadplusplus.install"
+
+	If VisualStudioCode = 1
+	myListOfPrograms .= " visualstudiocode"
 
 	If Firefox = 1
 	myListOfPrograms .= " firefox"
@@ -603,7 +534,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	myListOfPrograms .= " filezilla"
 
 	If 7zip = 1
-	myListOfPrograms .= " 7zip"
+	myListOfPrograms .= " 7zip.install"
 
 	If putty = 1
 	myListOfPrograms .= " putty"
@@ -614,9 +545,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	If spotify = 1
 	myListOfPrograms .= " spotify"
 
-	If picasa = 1
-	myListOfPrograms .= " picasa"
-
 	If ccleaner = 1
 	myListOfPrograms .= " ccleaner"
 
@@ -624,7 +552,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	myListOfPrograms .= " foobar2000"
 
 	If irfanview = 1
-	myListOfPrograms .= " irfanview"
+	myListOfPrograms .= " irfanview irfanviewplugins"
 
 	If vlc = 1
 	myListOfPrograms .= " vlc"
@@ -653,12 +581,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	If silverlight = 1
 	myListOfPrograms .= " silverlight"
 
-	If cdburnerxp = 1
-	myListOfPrograms .= " cdburnerxp"
-
-	If mse = 1
-	myListOfPrograms .= " microsoftsecurityessentials"
-
 	If imdisk = 1
 	myListOfPrograms .= " imdisk"
 
@@ -673,9 +595,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 
 	If Naps2 = 1
 	myListOfPrograms .= " naps2"
-
-	If avast = 1
-	myListOfPrograms .= " avastfreeantivirus"
 
 	If vc2008 = 1
 	myListOfPrograms .= " vcredist2008"
@@ -708,10 +627,10 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	myListOfPrograms .= " dotnet4.6.1"
 
 	If dotnetALL = 1
-	myListOfPrograms .= " dotnet3.5 dotnet4.0 dotnet4.5 dotnet4.6 dotnet4.6.1"
+	myListOfPrograms .= " dotnet3.5 dotnet4.0 dotnet4.5 dotnet4.6 dotnet4.6.1 dotnet4.7"
 
 	If redistALL = 1
-	myListOfPrograms .= " vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015"
+	myListOfPrograms .= " vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017"
 
 	Run *runas %comspec% /k %myListOfPrograms% -y
 	return
@@ -733,24 +652,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 }
 
-{ ; GUI 2 - Folders
-	F12::
-		Gui, 2:New
-		Gui, +alwaysontop
-		Gui,Add,Button,x+5 y+5 w50 h30, PC
-		Gui,Add,Button,x+5  w50 h30, C:\
-		Gui,Add,Button,x+5  w50 h30, D:\
-		; Gui,Add,Button,x+5  w50 h30, Z:\
-		Gui,Add,Button,x+5  h30, Program Files
-		Gui,Add,Button,x+5  h30, Program Files x86
-		Gui,Add,Button,x+5  h30, User
-		Gui,Add,Button,x+5  h30, Downloads
-		Gui,Add,Button,x+5  h30, Documents
-		Gui,Add,Button,x+5  h30, Desktop
-		Gui,Add,Button,x+5  h30, AppData
-		Gui, Show,  h40, Folders
-	return
-
+{ ; BUTTON COMMANDS - GUI 2 Folders
 
 	2ButtonPC:
 		Run explorer.exe
@@ -763,10 +665,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	2ButtonD:\:
 		run D:\
 	return
-
-	; 2ButtonZ:\:
-	;   run Z:\
-	; return
 
 	2ButtonProg:
 		Run, explorer C:\ProgramData
@@ -789,7 +687,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 
 	2ButtonAppData:
-		Run %appdata%
+		Run, explorer C:\Users\%A_UserName%\AppData
 	return
 
 	2ButtonProgramFilesx86:
@@ -801,7 +699,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 }
 
-{ ; Checkbox scripts
+{ ; Install -tab checkbox functionality
 	AlwaysOnTop:
 	GuiControlGet, Checked,, AlwaysOnTopVar
 	If Checked = 1
@@ -819,8 +717,9 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 }
 
 { ; HOTKEYS - Global and Application Specific
+	^!a::Winset, Alwaysontop, , A
 	^q::SendInput !{F4}
-	^H::SendInput, #{down}
+	; ^H::SendInput, #{down}
 	#IfWinActive ahk_class CabinetWClass ; Windows Explorer -views
 	F1::Send !{up}
 	!1::Send ^+2 ; Large icons
@@ -847,20 +746,22 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	!WheelDown:: SendInput,{CtrlDown}{Tab}{CtrlUp}
 	!WheelUp:: SendInput, {CtrlDown}{ShiftDown}{Tab}{ShiftUp}{CtrlUp}
 
+	F12::
+		Gui, 2:New
+		Gui,  +ToolWindow +alwaysontop
+		Gui,Add,Button,x+5 y+5 w50 h28, PC
+		Gui,Add,Button,x+5  w50 h28, C:\
+		Gui,Add,Button,x+5  w50 h28, D:\
+		Gui,Add,Button,x+5  h28, Program Files
+		Gui,Add,Button,x+5  h28, Program Files x86
+		Gui,Add,Button,x+5  h28, User
+		Gui,Add,Button,x+5  h28, Downloads
+		Gui,Add,Button,x+5  h28, Documents
+		Gui,Add,Button,x+5  h28, Desktop
+		Gui,Add,Button,x+5  h28, AppData
+		Gui, Show,  Autosize, Folders
+	return
 
-	; !1::
-	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WinDir . "\Web\Screen\img105.jpg", UInt, 1)
-	; return
-
-	; !2::
-	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp0.png", UInt, 1)
-	; return
-
-	; !3::
-	;   DllCall("SystemParametersInfo", UInt, 0x14, UInt, 0, Str, A_WorkingDir . "\wp1.jpg", UInt, 1)
-	; return
-
-	; !s::Run %A_ScriptDir%/htopmini.exe
 	!d::Run taskmgr.exe
 	!w::Run control.exe
 	!q::Run, control /name Microsoft.UserAccounts
@@ -1109,7 +1010,130 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	return
 }
 
-{ ; Script for getting installed programs
+{ ; Winkey+scroll transparency
+    #IfWinActive
+    #LButton::
+    MouseGetPos,,, currentWindow
+    %currentWindow% := 255
+
+    #Wheelup::
+    MouseGetPos,,, currentWindow
+    if not (%currentWindow%)
+    {
+        GoSub GetTransparent
+    }
+    if (%currentWindow% < 255)
+    {
+        %currentWindow% += 45
+    }
+    WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
+    SplashImage,,w150 x0 y0 b fs12, % currentWindow . "â€”" . %currentWindow%
+    SetTimer, TurnOffSI, 1000, On
+    Return
+
+    #Wheeldown::
+    MouseGetPos,,, currentWindow
+    if not (%currentWindow%)
+    {
+        GoSub GetTransparent
+    }
+    if (%currentWindow% > 50)
+    {
+        %currentWindow% -= 30
+    }
+    WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
+    SplashImage,, w150 x0 y0 b fs12, % currentWindow . "â€”" . %currentWindow%
+    SetTimer, TurnOffSI, 1000, On
+    Return
+
+    GetTransparent:
+    WinGet, ExStyle, ExStyle, ahk_id %currentWindow%
+    if (ExStyle & 0x80000)  ; 0x8 is WS_EX_LAYERED.
+        {
+        WinGet, TransLevel, Transparent, ahk_id %currentWindow%
+        %currentWindow% := TransLevel
+        }
+        else
+        %currentWindow% := 255
+    Return
+
+    TurnOffSI:
+    SplashImage, off
+    SetTimer, TurnOffSI, 1000, Off
+    Return
+}
+
+{ ; Alt + tilde window switcher
+
+	SetCurrentProgram() {
+		global
+		local ActiveProgram
+		local A
+		WinGet ActiveProgram, ProcessName, A
+		if (ActiveProgram <> CurrentProgram) {
+			if (ActiveProgram = "Explorer.EXE")
+			{
+				WinGet, ProgramArray, list, ahk_class CabinetWClass
+			}
+			else
+			{
+				WinGet, ProgramArray, list, ahk_exe %ActiveProgram%
+			}
+			CurrentProgram := ActiveProgram
+			ProgramCursor := 1
+		}
+	}
+
+	ResetCurrentProgram() {
+		global
+		if (!GetKeyState("Alt", "P")) {
+			SetTimer, ResetCurrentProgram, Off
+			CurrentProgram := ""
+		}
+	}
+
+	SwitchToProgramWindow() {
+		global
+		local CursorID := ProgramArray%ProgramCursor%
+		WinActivate, ahk_id %CursorID%
+		SetTimer, ResetCurrentProgram, 100
+	}
+
+	NextProgramWindow() {
+		global
+		if (ProgramArray > 1) {
+			ProgramCursor := ProgramCursor + 1
+			if (ProgramCursor > ProgramArray) {
+				ProgramCursor := 1
+			}
+			SwitchToProgramWindow()
+		}
+	}
+
+	PrevProgramWindow() {
+		global
+		if (ProgramArray > 1) {
+			ProgramCursor := ProgramCursor - 1
+			if (ProgramCursor < 1) {
+				ProgramCursor := ProgramArray
+			}
+			SwitchToProgramWindow()
+		}
+}
+
+; Window switcher key bindings
+	!SC029::
+	SetCurrentProgram()
+	NextProgramWindow()
+	return
+
+	!+SC029::
+	SetCurrentProgram()
+	PrevProgramWindow()
+	return
+}
+
+{ ; List installed programs
 	insw:
 	fileappend,HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall`n`t~~~~~~~~~~`n`n,installed software.txt
 		Loop, HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall, 1, 1
@@ -1122,6 +1146,80 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	 }
 	return
 }
+
+{ ; Alt Drag
+	!LButton::
+
+	MouseGetPos,KDE_X1,KDE_Y1,KDE_id
+	WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
+	If KDE_Win
+		return
+	WinGetPos,KDE_WinX1,KDE_WinY1,,,ahk_id %KDE_id%
+	Loop
+	{
+		GetKeyState,KDE_Button,LButton,P ; Break if button has been released.
+		If KDE_Button = U
+			break
+		MouseGetPos,KDE_X2,KDE_Y2 ; Get the current mouse position.
+		KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
+		KDE_Y2 -= KDE_Y1
+		KDE_WinX2 := (KDE_WinX1 + KDE_X2) ; Apply this offset to the window position.
+		KDE_WinY2 := (KDE_WinY1 + KDE_Y2)
+		WinMove,ahk_id %KDE_id%,,%KDE_WinX2%,%KDE_WinY2% ; Move the window to the new position.
+	}
+	return
+
+	!RButton::
+	If DoubleAlt
+	{
+		MouseGetPos,,,KDE_id
+		; Toggle between maximized and restored state.
+		WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
+		If KDE_Win
+			WinRestore,ahk_id %KDE_id%
+		Else
+			WinMaximize,ahk_id %KDE_id%
+		DoubleAlt := false
+		return
+	}
+
+	MouseGetPos,KDE_X1,KDE_Y1,KDE_id
+	WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
+	If KDE_Win
+		return
+
+	WinGetPos,KDE_WinX1,KDE_WinY1,KDE_WinW,KDE_WinH,ahk_id %KDE_id%
+	If (KDE_X1 < KDE_WinX1 + KDE_WinW / 2)
+		KDE_WinLeft := 1
+	Else
+		KDE_WinLeft := -1
+	If (KDE_Y1 < KDE_WinY1 + KDE_WinH / 2)
+		KDE_WinUp := 1
+	Else
+		KDE_WinUp := -1
+	Loop
+	{
+		GetKeyState,KDE_Button,RButton,P ; Break if button has been released.
+		If KDE_Button = U
+			break
+		MouseGetPos,KDE_X2,KDE_Y2 ; Get the current mouse position.
+		; Get the current window position and size.
+		WinGetPos,KDE_WinX1,KDE_WinY1,KDE_WinW,KDE_WinH,ahk_id %KDE_id%
+		KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
+		KDE_Y2 -= KDE_Y1
+		; Then, act according to the defined region.
+		WinMove,ahk_id %KDE_id%,, KDE_WinX1 + (KDE_WinLeft+1)/2*KDE_X2  ; X of resized window
+								, KDE_WinY1 +   (KDE_WinUp+1)/2*KDE_Y2  ; Y of resized window
+								, KDE_WinW  -     KDE_WinLeft  *KDE_X2  ; W of resized window
+								, KDE_WinH  -       KDE_WinUp  *KDE_Y2  ; H of resized window
+		KDE_X1 := (KDE_X2 + KDE_X1) ; Reset the initial position for the next iteration.
+		KDE_Y1 := (KDE_Y2 + KDE_Y1)
+	}
+	return
+
+}
+
+return
 
 GuiClose:
 GuiEscape:
