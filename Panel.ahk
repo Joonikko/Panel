@@ -74,76 +74,76 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 { ; GUI INSTALLATION TAB
 	Gui,Tab, Install
 	; COL 1
-	Gui,Add,Checkbox,x10 y30 w90 h20  	vChrome,      		GoogleChrome
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20  vOpera,       		Opera
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20  vFirefox,     		Firefox
-	Gui,Add,Checkbox,x10 y+10 w50 h20  v7zip,        		7-Zip
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20  vSkype,       		Skype
-	Gui,Add,Checkbox,x10 y+0.5 w70 h20 	vCCleaner,    		CCleaner
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20 	vJava,        		Java
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20 	vFlash,       		Flash
-	Gui,Add,Checkbox,x10 y+0.5 w70 h20 	vSilverlight,   	Silverlight
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20 	vImDisk,      		ImDisk
-	Gui,Add,Checkbox,x10 y+0.5 w90 h20 	vImDiskToolkit,   	ImDisk Toolkit
+	Gui,Add,Checkbox,x10 y30 w90 h20  		vChrome,      		GoogleChrome
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20  	vOpera,       		Opera
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vFirefox,     		Firefox
+	Gui,Add,Checkbox,x10 y+10 w50 h20  		v7zip,        		7-Zip
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vSkype,       		Skype
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vCCleaner,    		CCleaner
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vJava,        		Java
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vFlash,       		Flash
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vSilverlight,   	Silverlight
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20 		vImDisk,      		ImDisk
+	Gui,Add,Checkbox,x10 y+0.5 w90 h20 		vImDiskToolkit,   	ImDisk Toolkit
 
 	; COL 2
-	Gui,Add,Checkbox,x120 y30 w70 h20   vLibreOffice,   	LibreOffice
-	Gui,Add,Checkbox,x120 y+0.5 w90 h20   vAdobeReader,   	AdobeReader
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20   vThunderbird,   	Thunderbird
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20   vSumatraPDF,    	SumatraPDF
-	Gui,Add,Checkbox,x120 y+10 w60 h20  vSpotify,     		Spotify
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20  vFoobar,      		Foobar2000
-	Gui,Add,Checkbox,x120 y+0.5 w50 h20  vVLC,       		VLC
-	Gui,Add,Checkbox,x120 y+0.5 w70 h20  vKLite,       		K-Lite Full
-	Gui,Add,Checkbox,x120 y+0.5 w70 h20  vQuicktime,     	QuickTime
-	Gui,Add,Checkbox,x120 y+0.5 w60 h20  viTunes,      		iTunes
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20  vNaps2,       		Naps2
+	Gui,Add,Checkbox,x120 y30 w70 h20   	vLibreOffice,   	LibreOffice
+	Gui,Add,Checkbox,x120 y+0.5 w90 h20   	vAdobeReader,   	AdobeReader
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vThunderbird,   	Thunderbird
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vSumatraPDF,    	SumatraPDF
+	Gui,Add,Checkbox,x120 y+10 w60 h20  	vSpotify,     		Spotify
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vFoobar,      		Foobar2000
+	Gui,Add,Checkbox,x120 y+0.5 w50 h20  	vVLC,       		VLC
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vKLite,       		K-Lite Full
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vQuicktime,     	QuickTime
+	Gui,Add,Checkbox,x120 y+0.5 w60 h20  	viTunes,      		iTunes
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vNaps2,       		Naps2
 
 	;COL 3
-	Gui,Add,Checkbox,x230 y30 w70 h20   vDropbox,     		Dropbox
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20   vGoogleDrive,   	Google Drive
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20   vOneDrive,      	OneDrive
-	Gui,Add,Checkbox,x230 y+10 w50 h20  vGIMP,        		GIMP
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vIrfanview,   		IfranView
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vPaint,       		Paint.NET
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20  vInkscape,      	Inkscape
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20  vImageglass,      	ImageGlass
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20  vMalwarebytes,    	Malwarebytes
-	Gui,Add,Checkbox,x230 y+0.5 w100 h20  vRevoUninstaller, 	Revo Unins.
+	Gui,Add,Checkbox,x230 y30 w70 h20   	vDropbox,     		Dropbox
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20   	vGoogleDrive,   	Google Drive
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20   	vOneDrive,      	OneDrive
+	Gui,Add,Checkbox,x230 y+10 w50 h20  	vGIMP,        		GIMP
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vIrfanview,   		IfranView
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20		vPaint,       		Paint.NET
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vInkscape,      	Inkscape
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vImageglass,      	ImageGlass
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vMalwarebytes,    	Malwarebytes
+	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vRevoUninstaller, 	Revo Unins.
 
 	; COL 4
-	Gui,Add,Checkbox,x330 y30 w80 h20   vNotepadplusplus, 	Notepad++
-	Gui,Add,Checkbox,x330 y+0.5 w100 h20  vVisualStudioCode,	VS Code
-	Gui,Add,Checkbox,x330 y+0.5 w100 h20  vProcessExplorer, 	Process Explorer
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20   vFileZilla,     	FileZilla
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vPutty,       		Putty
+	Gui,Add,Checkbox,x330 y30 w80 h20   	vNotepadplusplus, 	Notepad++
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vVisualStudioCode,	VS Code
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vProcessExplorer, 	Process Explorer
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20   	vFileZilla,     	FileZilla
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vPutty,       		Putty
 
-	Gui,Add,Checkbox,x330 y160 w70 h20  vRedistALL,     	All
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2008,      		2008
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2010,      		2010
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2012,      		2012
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2013,      		2013
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  vVC2015,      		2015
+	Gui,Add,Checkbox,x330 y160 w70 h20  	vRedistALL,     	All
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2008,      		2008
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2010,      		2010
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2012,      		2012
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2013,      		2013
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2015,      		2015
 
-	Gui,Add,Checkbox,x400 y160 w70 h20  vDotnetALL,     	All
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet35,      	3.5
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet40,      	4.0
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet45,      	4.5
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet46,      	4.6
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  vDotnet461,     	4.6.1
+	Gui,Add,Checkbox,x400 y160 w70 h20  	vDotnetALL,     	All
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet35,      	3.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet40,      	4.0
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet45,      	4.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet46,      	4.6
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet461,     	4.6.1
 
-	Gui,Add,Text,x330 y145 w70 h15,   	VC Redist
-	Gui,Add,Text,x400 y145 w60 h15,   	.NET
+	Gui,Add,Text,x330 y145 w70 h15,   		VC Redist
+	Gui,Add,Text,x400 y145 w60 h15,   		.NET
 
-	Gui,Add,Button,x470 y170 w80 h40  gDefaultChoco,    	Default Install
-	Gui,Add,Button,x470 y90 w80 h30   gInstallChoco2,   	CMD Install
-	Gui,Add,Button,x470 y120 w80 h30  gInstallChoco1,   	PS Install
-	Gui,Add,Button,x470 y210 w80 h30  gUpdateChoco,   		Update All
-	Gui,Add,Button,x470 y240 w80 h40,           			Install
+	Gui,Add,Button,x470 y170 w80 h40  		gDefaultChoco,    	Default Install
+	Gui,Add,Button,x470 y90 w80 h30   		gInstallChoco2,   	CMD Install
+	Gui,Add,Button,x470 y120 w80 h30  		gInstallChoco1,   	PS Install
+	Gui,Add,Button,x470 y210 w80 h30  		gUpdateChoco,   	Update All
+	Gui,Add,Button,x470 y240 w80 h40,           				Install
 
 	; COL 5
-	Gui,Add,Checkbox,x470 y30 w80 h20   vClassicShell,    	Classic Shell
-	Gui,Add,Checkbox,x470 y50 w105 h20  vClassicShellStart, Classic Start
+	Gui,Add,Checkbox,x470 y30 w80 h20   	vClassicShell,    	Classic Shell
+	Gui,Add,Checkbox,x470 y50 w105 h20  	vClassicShellStart, Classic Start
 
 }
 
@@ -224,7 +224,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
 					. "Modell:`t`t"     Win32_VC[2]
 
-	Gui, Add, Text, x450 y40, Panel v1.02
+	Gui, Add, Text, x450 y40, Panel v1.03
 }
 
 { ; GUI HOTKEYS TAB
@@ -441,23 +441,23 @@ return
 	return
 
 	ButtonPC:
-		Run explorer.exe =
+		Run, "::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
 	return
 
 	ButtonC:\:
-		run C:\
+		run, C:\
 	return
 
 	ButtonProg:
-		Run, explorer C:\ProgramData
+		Run, C:\ProgramData
 	return
 
 	ButtonUserFolder:
-		Run, explorer C:\Users\%A_UserName%
+		Run, C:\Users\%A_UserName%
 	return
 
 	ButtonAppData:
-		Run, explorer C:\Users\%A_UserName%\AppData
+		Run, C:\Users\%A_UserName%\AppData
 	return
 
 	ButtonProgramFilesx86:
@@ -473,7 +473,7 @@ return
 	return
 
 	ButtonUserStart:
-		run %appdata%\Microsoft\Windows\Start Menu
+		Run, C:\Users\%A_UserName%\AppData\Roaming\Microsoft\Windows\Start Menu
 	return
 }
 
@@ -667,27 +667,27 @@ return
 	return
 
 	2ButtonProg:
-		Run, explorer C:\ProgramData
+		Run, C:\ProgramData
 	return
 
 	2ButtonUser:
-		Run, explorer C:\Users\%A_UserName%
+		Run, C:\Users\%A_UserName%
 	return
 
 	2ButtonDownloads:
-		Run, explorer C:\Users\%A_UserName%\Downloads
+		Run, C:\Users\%A_UserName%\Downloads
 	return
 
 	2ButtonDocuments:
-		Run, explorer C:\Users\%A_UserName%\Documents
+		Run, C:\Users\%A_UserName%\Documents
 	return
 
 	2ButtonDesktop:
-		Run, explorer C:\Users\%A_UserName%\Desktop
+		Run, C:\Users\%A_UserName%\Desktop
 	return
 
 	2ButtonAppData:
-		Run, explorer C:\Users\%A_UserName%\AppData
+		Run, C:\Users\%A_UserName%\AppData
 	return
 
 	2ButtonProgramFilesx86:
@@ -731,6 +731,16 @@ return
 	!E::Send ^+8 ; Content
 	!a::Send ^+1 ; Extra large icons
 	!n::Send !d!vn{enter}ln
+
+
+	#IfWinActive ahk_class EVERYTHING
+	F1::Send ^+1
+	F2::Send ^+2
+	F3::Send ^+3
+	F4::Send ^+6
+	; F5::Send ^+6
+
+
 }
 
 { ; HOTKEYS - Panel Specific
@@ -1011,56 +1021,56 @@ return
 }
 
 { ; Winkey+scroll transparency
-    #IfWinActive
-    #LButton::
-    MouseGetPos,,, currentWindow
-    %currentWindow% := 255
+	#IfWinActive
+	^!LButton::
+	MouseGetPos,,, currentWindow
+	%currentWindow% := 255
 
-    #Wheelup::
-    MouseGetPos,,, currentWindow
-    if not (%currentWindow%)
-    {
-        GoSub GetTransparent
-    }
-    if (%currentWindow% < 255)
-    {
-        %currentWindow% += 45
-    }
-    WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
-    SplashImage,,w150 x0 y0 b fs12, % currentWindow . "—" . %currentWindow%
-    SetTimer, TurnOffSI, 1000, On
-    Return
+	^!Wheelup::
+	MouseGetPos,,, currentWindow
+	if not (%currentWindow%)
+	{
+		GoSub GetTransparent
+	}
+	if (%currentWindow% < 255)
+	{
+		%currentWindow% += 45
+	}
+	WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
+	SplashImage,,w150 x0 y0 b fs12, % currentWindow . "—" . %currentWindow%
+	SetTimer, TurnOffSI, 1000, On
+	Return
 
-    #Wheeldown::
-    MouseGetPos,,, currentWindow
-    if not (%currentWindow%)
-    {
-        GoSub GetTransparent
-    }
-    if (%currentWindow% > 50)
-    {
-        %currentWindow% -= 30
-    }
-    WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
-    SplashImage,, w150 x0 y0 b fs12, % currentWindow . "—" . %currentWindow%
-    SetTimer, TurnOffSI, 1000, On
-    Return
+	^!Wheeldown::
+	MouseGetPos,,, currentWindow
+	if not (%currentWindow%)
+	{
+		GoSub GetTransparent
+	}
+	if (%currentWindow% > 50)
+	{
+		%currentWindow% -= 30
+	}
+	WinSet, Transparent, % %currentWindow%, ahk_id %currentWindow%
+	SplashImage,, w150 x0 y0 b fs12, % currentWindow . "—" . %currentWindow%
+	SetTimer, TurnOffSI, 1000, On
+	Return
 
-    GetTransparent:
-    WinGet, ExStyle, ExStyle, ahk_id %currentWindow%
-    if (ExStyle & 0x80000)  ; 0x8 is WS_EX_LAYERED.
-        {
-        WinGet, TransLevel, Transparent, ahk_id %currentWindow%
-        %currentWindow% := TransLevel
-        }
-        else
-        %currentWindow% := 255
-    Return
+	GetTransparent:
+	WinGet, ExStyle, ExStyle, ahk_id %currentWindow%
+	if (ExStyle & 0x80000)  ; 0x8 is WS_EX_LAYERED.
+		{
+		WinGet, TransLevel, Transparent, ahk_id %currentWindow%
+		%currentWindow% := TransLevel
+		}
+		else
+		%currentWindow% := 255
+	Return
 
-    TurnOffSI:
-    SplashImage, off
-    SetTimer, TurnOffSI, 1000, Off
-    Return
+	TurnOffSI:
+	SplashImage, off
+	SetTimer, TurnOffSI, 1000, Off
+	Return
 }
 
 { ; Alt + tilde window switcher
