@@ -2,7 +2,6 @@
 ; https://github.com/joonikko/panel
 
 #SingleInstance force
-#IfWinNotActive ahk_class MultitaskingViewFrame
 #NoEnv
 
 SendMode Input
@@ -66,6 +65,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Button,x+0.5 y220 w120 h30 gINSW, List installed software
 
 	Gui,Add,Checkbox,x295 y130  gAlwaysOnTop vAlwaysOnTopVar, Always on Top
+	Gui,Add,Checkbox,x+10 y130 gPreventSleep vPreventSleepVar, Prevent Sleep
 	Gui, Add, Button, x495 y259 w30 h23, OK
 	Gui, Add, ComboBox, x290 y260 w200 vComboBox, Action Center|- Action Center (Problem Reporting settings)|Add or Remove Programs|Administrative Tools|Automatic Updates|AutoPlay|Backup and Restore|Biometric Devices (if available)|BitLocker Drive Encryption (if available)|Bluetooth Devices (if available)|Color Management|Credential Manager|CSNW (Client Service for NetWare)|Date and Time|Default Programs|Desktop Gadgets|Device Manager|Devices and Printers|Display|Ease of Access Center|File Associations|Folder Options|Flash Player Settings Manager|Fonts|Game Controllers|Get Programs|Getting Started|HomeGroup|Indexing Options|Infrared (if available)|Intel Graphics (if available)|Internet Options|iSCSI Initiator|Java 7|Keyboard|Location and Other Sensors|Mail Setup (Outlook) (if available)|Mouse|Network and Sharing Center|Network Connections|Network Setup Wizard|Notification Area Icons|Offline Files|Parental Controls|Pen and Input Devices (if available)|Pen and Touch Settings|People Near Me|Performance Information and Tools|Performance Options|Personalization|- Personalization (Desktop Background)|- Personalization (Window Color and Appearance)|Phone and Modem|Power Options|- Power Options (Edit Plan settings)|- Power Options (System settings)|- Power Options (Create a Power Plan)|Printers and Faxes|Problem Reports and Solutions|Programs and Features|RealTek HD Audio Manager (if available)|Region and Language|- Region and Language (Location)|- Region and Language (Keyboards and Languages)|- Region and Language (Administrative)|RemoteApp and Desktop Connections|Scanners and Cameras|Scheduled Tasks|Screen Resolution|Sound|Sounds and Audio Devices|Speech Recognition Options|Speech Recognition|Sync Center|System|- System Properties (Advanced)|- System Properties (Computer Name)|- System Properties (Data Execution Prevention)|- System Properties (Hardware)|- System Properties (Performance)|- System Properties (Remote Access)|- System Properties (System Protection)|Tablet PC Settings (if available)|Taskbar and Start Menu|Text to Speech|Troubleshooting|User Accounts|Welcome Center|Windows Anytime Upgrade|Windows CardSpace|Windows Defender|Windows Firewall|Windows Marketplace|Windows Master Control Panel (All Tasks)|Windows Mobility Center|Windows Optional Features|Windows Sidebar Properties|Windows SideShow|Windows Update|- Windows Update (Change Settings)
 
@@ -224,7 +224,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
 					. "Modell:`t`t"     Win32_VC[2]
 
-	Gui, Add, Text, x450 y40, Panel v1.03
+	Gui, Add, Text, x450 y40, Panel v1.04
 }
 
 { ; GUI HOTKEYS TAB
@@ -272,10 +272,9 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, xp y+4, Alt+W  -  Control panel
 	Gui, Add, Text, xp y+4, Alt+D  -  Task Manager
 	Gui, Add, Text, xp y+4, Alt+F1  -  Turn screen off
-
 }
-
 return
+
 
 { ; WindowShade
 	!SC056::
@@ -433,7 +432,7 @@ return
 	return
 
 	ButtonHosts:
-		Run *runas notepad.exe "%SystemRoot%\System32\drivers\etc\hosts"
+		Run *runas notepad.exe C:\WINDOWS\System32\drivers\etc\hosts
 	return
 
 	ButtonHostFolder:
@@ -699,7 +698,7 @@ return
 	return
 }
 
-{ ; Install -tab checkbox functionality
+{ ; MAIN TAB checkbox functionality
 	AlwaysOnTop:
 	GuiControlGet, Checked,, AlwaysOnTopVar
 	If Checked = 1
@@ -712,8 +711,25 @@ return
 		else
 		{
 			WinSet, AlwaysOnTop, on, ahk_class AutoHotkeyGUI
-	}
+		}
 	return
+
+	PreventSleep:
+	GuiControlGet, Checked,, PreventSleepVar
+
+	If Checked = 0
+	SetTimer, CheckIdle, off
+
+	If Checked = 1
+	SetTimer, CheckIdle, 600    ; 60 sec / 1 min
+	return
+
+	CheckIdle:
+		If ( A_TimeIdle > 5999 ) {
+		Send {RShift}
+		}
+	Return
+
 }
 
 { ; HOTKEYS - Global and Application Specific
@@ -722,6 +738,7 @@ return
 	; ^H::SendInput, #{down}
 	#IfWinActive ahk_class CabinetWClass ; Windows Explorer -views
 	F1::Send !{up}
+	+1::Send !{up}
 	!1::Send ^+2 ; Large icons
 	!2::Send ^+5 ; List
 	!3::Send ^+6 ; Details
@@ -738,13 +755,19 @@ return
 	F2::Send ^+2
 	F3::Send ^+3
 	F4::Send ^+6
-	; F5::Send ^+6
 
+	#IfWinActive ahk_exe chrome.exe
+	::cce::chrome://extensions/{Enter}
+	::ccs::chrome://settings/{Enter}
+	::ccw::https://chrome.google.com/webstore{Enter}
+	::cca::chrome://settings/help{Enter}
+	!WheelDown:: SendInput,{CtrlDown}{Tab}{CtrlUp}
+	!WheelUp:: SendInput, {CtrlDown}{ShiftDown}{Tab}{ShiftUp}{CtrlUp}
 
 }
 
 { ; HOTKEYS - Panel Specific
-	#IfWinActive, ahk_class AutoHotkeyGUI
+	#IfWinActive ahk_exe Panel.exe
 
 	+1::GuiControl, Choose, TabName, |1
 	+2::GuiControl, Choose, TabName, |2
@@ -755,22 +778,6 @@ return
 
 	!WheelDown:: SendInput,{CtrlDown}{Tab}{CtrlUp}
 	!WheelUp:: SendInput, {CtrlDown}{ShiftDown}{Tab}{ShiftUp}{CtrlUp}
-
-	F12::
-		Gui, 2:New
-		Gui,  +ToolWindow +alwaysontop
-		Gui,Add,Button,x+5 y+5 w50 h28, PC
-		Gui,Add,Button,x+5  w50 h28, C:\
-		Gui,Add,Button,x+5  w50 h28, D:\
-		Gui,Add,Button,x+5  h28, Program Files
-		Gui,Add,Button,x+5  h28, Program Files x86
-		Gui,Add,Button,x+5  h28, User
-		Gui,Add,Button,x+5  h28, Downloads
-		Gui,Add,Button,x+5  h28, Documents
-		Gui,Add,Button,x+5  h28, Desktop
-		Gui,Add,Button,x+5  h28, AppData
-		Gui, Show,  Autosize, Folders
-	return
 
 	!d::Run taskmgr.exe
 	!w::Run control.exe
@@ -802,16 +809,30 @@ return
 	return
 
 	; F10::
-	;   Run Removable.exe
-	; return
-
-	; F12::
 	;   FileRead, Clipboard, %A_ScriptDir%/hosts.txt
 	;   ClipWait
 	;   clipboard = %clipboard%
 	; return
 
 	Escape::Exitapp
+
+	F12::
+		Gui, 2:New
+		Gui,  +ToolWindow +alwaysontop
+		Gui,Add,Button,x+5 y+5 w50 h28, PC
+		Gui,Add,Button,x+5  w50 h28, C:\
+		Gui,Add,Button,x+5  w50 h28, D:\
+		Gui,Add,Button,x+5  h28, Program Files
+		Gui,Add,Button,x+5  h28, Program Files x86
+		Gui,Add,Button,x+5  h28, User
+		Gui,Add,Button,x+5  h28, Downloads
+		Gui,Add,Button,x+5  h28, Documents
+		Gui,Add,Button,x+5  h28, Desktop
+		Gui,Add,Button,x+5  h28, AppData
+		Gui, Show,  Autosize, Folders
+	return
+
+
 }
 
 { ; ButtonOK
@@ -1072,6 +1093,7 @@ return
 	SetTimer, TurnOffSI, 1000, Off
 	Return
 }
+#IfWinNotActive ahk_class MultitaskingViewFrame
 
 { ; Alt + tilde window switcher
 
