@@ -12,7 +12,7 @@ CoordMode,Mouse
 OnExit, GuiClose
 
 Gui,Show, w560 h290, Panel
-Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
+Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Run
 
 { ; GUI MAIN TAB
 	Gui,Tab, Main
@@ -23,6 +23,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Button,x10 y70 w80 h30,Task Manager
 	Gui,Add,Button,x+0.5 y70 w60 h30,msconfig
 	Gui,Add,Button,x+0.5 y70 w43 h30,Edge
+	Gui,Add,Button,x+0.5 y70 w43 h30 gShowCPUGraph, CPU
 
 	Gui,Add,Button,x290 y40 w80 h40,Log Out
 	Gui,Add,Button,x370 y40 w100 h40,Reboot
@@ -83,9 +84,8 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vJava,        		Java
 	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vFlash,       		Flash
 	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vSilverlight,   	Silverlight
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20 		vImDisk,      		ImDisk
 	Gui,Add,Checkbox,x10 y+0.5 w90 h20 		vImDiskToolkit,   	ImDisk Toolkit
-
+    Gui,Add,Checkbox,x10 y+0.5 w80 h20  	vQuicklook,    		Quicklook
 	; COL 2
 	Gui,Add,Checkbox,x120 y30 w70 h20   	vLibreOffice,   	LibreOffice
 	Gui,Add,Checkbox,x120 y+0.5 w90 h20   	vAdobeReader,   	AdobeReader
@@ -98,7 +98,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vQuicktime,     	QuickTime
 	Gui,Add,Checkbox,x120 y+0.5 w60 h20  	viTunes,      		iTunes
 	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vNaps2,       		Naps2
-
 	;COL 3
 	Gui,Add,Checkbox,x230 y30 w70 h20   	vDropbox,     		Dropbox
 	Gui,Add,Checkbox,x230 y+0.5 w90 h20   	vGoogleDrive,   	Google Drive
@@ -110,7 +109,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vImageglass,      	ImageGlass
 	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vMalwarebytes,    	Malwarebytes
 	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vRevoUninstaller, 	Revo Unins.
-
 	; COL 4
 	Gui,Add,Checkbox,x330 y30 w80 h20   	vNotepadplusplus, 	Notepad++
 	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vVisualStudioCode,	VS Code
@@ -224,7 +222,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
 					. "Modell:`t`t"     Win32_VC[2]
 
-	Gui, Add, Text, x450 y40, Panel v1.04
+	Gui, Add, Text, x450 y40, Panel v1.05
 }
 
 { ; GUI HOTKEYS TAB
@@ -273,6 +271,48 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys
 	Gui, Add, Text, xp y+4, Alt+D  -  Task Manager
 	Gui, Add, Text, xp y+4, Alt+F1  -  Turn screen off
 }
+
+
+{ ; GUI RUN TAB
+	Gui,Tab, Run
+	Gui,Add,Checkbox,x10 y30 w70 h20	vRunChrome, Chrome
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunFirefox, Firefox
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunOpera, Opera
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunEdge, Edge
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunIE, IE
+
+	Gui,Add,Checkbox,x10 y+10 w70 h20	vRunAcrobat, Acrobat
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunWordpad, Wordpad
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunNotepad, Notepad
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunNotepadpp, Notepad++
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRunVLC, VLC
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20	vRun7zip, 7-Zip
+
+	Gui,Add,Checkbox, x100 y30 w70 h20 	vRunWord, Word
+	Gui,Add,Checkbox,x100 y+0.5 w70 h20	vRunExcel, Excel
+	Gui,Add,Checkbox,x100 y+0.5 w70 h20	vRunPowerPoint, PowerPoint
+	Gui,Add,Checkbox,x100 y+0.5 w70 h20	vRunOutlook, Outlook
+
+	Gui,Add,Checkbox,x100 y+30 w70 h20	vRunLibreOffice, LibreOffice
+	Gui,Add,Checkbox,x100 y+0.5 w70 h20	vRunSpotify, Spotify
+
+	Gui,Add,Checkbox,x100 y+10 w90 h20	vRunMsconfig, msconfig
+	Gui,Add,Checkbox,x100 y+0.5 w90 h20	vRunTaskManager, Task Manager
+
+	Gui,Add,Checkbox,x100 y+10 w150 h20	vRunLoadTabs, Load browser tabs
+
+
+
+
+	Gui,Add,Button, x450 y40 h30 w100 gRunDefaults, Defaults
+	Gui,Add,Button, x450 y+2 h30 w100 gRunOffice, Office
+	Gui,Add,Button, x450 y+2 h30 w100 gRunBench, Bench
+	Gui,Add,Button, x450 y+2 h30 w100 gRunClear, Clear
+	Gui,Add,Button, x450 y+30 h45 w100 gRunSelected, Run
+
+}
+
+
 return
 
 
@@ -368,6 +408,7 @@ return
 	MainWordpad:
 		Run wordpad
 	return
+
 }
 
 { ; BUTTON COMMANDS - control panel
@@ -485,7 +526,7 @@ return
 	myListOfPrograms .= " googlechrome"
 
 	If LibreOffice = 1
-	myListOfPrograms .= " libreoffice"
+	myListOfPrograms .= " libreoffice-fresh"
 
 	If Dropbox = 1
 	myListOfPrograms .= " dropbox"
@@ -595,6 +636,9 @@ return
 	If Naps2 = 1
 	myListOfPrograms .= " naps2"
 
+    If Quicklook = 1
+	myListOfPrograms .= " quicklook"
+
 	If vc2008 = 1
 	myListOfPrograms .= " vcredist2008"
 
@@ -635,7 +679,12 @@ return
 	return
 
 	DefaultChoco:
-		Run *runas %comspec% /k choco install 7zip vlc adobereader googlechrome -y
+		; Run *runas %comspec% /k choco install 7zip vlc adobereader googlechrome -y
+		GuiControl,, Chrome, 1
+		GuiControl,, 7zip, 1
+		GuiControl,, adobereader, 1
+		GuiControl,, RedistALL, 1
+		GuiControl,, DotnetALL, 1
 	return
 
 	InstallChoco1:
@@ -649,6 +698,124 @@ return
 	UpdateChoco:
 		Run *runas %comspec% /k cup all -y
 	return
+}
+
+{ ; BUTTON COMMANDS - Run
+RunSelected:
+	Gui, Submit, NoHide
+
+	if RunChrome = 1
+	Run, Chrome.exe
+
+	if RunFirefox = 1
+	Run, firefox.exe
+
+	if RunOpera = 1
+	Run, opera.exe
+
+	if RunEdge = 1
+	Run, microsoft-edge:
+
+	if RunIE = 1
+	Run, iexplore.exe
+
+	if RunAcrobat = 1
+	Run, AcroRd32.exe
+
+	if RunWordpad = 1
+	Run, wordpad.exe
+
+	if RunNotepad = 1
+	Run, notepad.exe
+
+	if RunNotepadpp = 1
+	Run, notepad++.exe
+
+	if RunVLC = 1
+	Run, vlc.exe
+
+	if Run7zip = 1
+	Run, 7zFM.exe
+
+	if RunWord = 1
+	Run, WINWORD.EXE
+
+	if RunExcel = 1
+	Run, EXCEL.exe
+
+	if RunPowerPoint = 1
+	Run, POWERPNT.exe
+
+	if RunOutlook = 1
+	Run, outlook.exe
+
+	if RunLibreOffice = 1
+	Run, soffice.exe
+
+	if RunSpotify = 1
+	Run, C:\Users\%A_UserName%\AppData\Roaming\Spotify\Spotify.exe
+
+	if RunMsconfig = 1
+	Run, msconfig
+
+	if RunTaskManager = 1
+	Run, taskmgr.exe
+
+	if RunLoadTabs = 1
+	Run, Chrome.exe "fast.com" "http://ilmatieteenlaitos.fi/" "https://www.google.fi/" "http://yle.fi/uutiset" "https://yle.fi/" "https://areena.yle.fi/tv" "https://github.com/" "euronics.fi" "https://www.f-secure.com/fi_FI/web/home_fi/home"
+
+return
+
+
+RunDefaults:
+	GuiControl,, RunChrome, 1
+	GuiControl,, RunEdge, 1
+	GuiControl,, RunIE, 1
+	GuiControl,, RunAcrobat, 1
+	GuiControl,, Run7zip, 1
+return
+
+RunOffice:
+	GuiControl,, RunWord, 1
+	GuiControl,, RunExcel, 1
+	GuiControl,, RunPowerPoint, 1
+	GuiControl,, Outlook, 1
+return
+
+RunBench:
+	GuiControl,, RunChrome, 1
+	GuiControl,, RunEdge, 1
+	GuiControl,, RunIE, 1
+	GuiControl,, RunAcrobat, 1
+	GuiControl,, RunWordpad, 1
+	GuiControl,, RunNotepad, 1
+	GuiControl,, Run7zip, 1
+	GuiControl,, RunLoadTabs, 1
+return
+
+RunClear:
+	GuiControl,, RunChrome, 0
+	GuiControl,, RunFirefox, 0
+	GuiControl,, RunOpera, 0
+	GuiControl,, RunEdge, 0
+	GuiControl,, RunIE, 0
+	GuiControl,, RunAcrobat, 0
+	GuiControl,, RunWordpad, 0
+	GuiControl,, RunNotepad, 0
+	GuiControl,, RunNotepadpp, 0
+	GuiControl,, RunVLC, 0
+	GuiControl,, Run7zip, 0
+	GuiControl,, RunWord, 0
+	GuiControl,, RunExcel, 0
+	GuiControl,, RunPowerPoint, 0
+	GuiControl,, RunLibreOffice, 0
+	GuiControl,, RunOutlook, 0
+	GuiControl,, RunSpotify, 0
+	GuiControl,, Runmsconfig, 0
+	GuiControl,, RunTaskManager, 0
+	GuiControl,, RunLoadTabs, 0
+return
+
 }
 
 { ; BUTTON COMMANDS - GUI 2 Folders
@@ -761,6 +928,7 @@ return
 	::ccs::chrome://settings/{Enter}
 	::ccw::https://chrome.google.com/webstore{Enter}
 	::cca::chrome://settings/help{Enter}
+	::ccb::chrome://bookmarks{Enter}
 	!WheelDown:: SendInput,{CtrlDown}{Tab}{CtrlUp}
 	!WheelUp:: SendInput, {CtrlDown}{ShiftDown}{Tab}{ShiftUp}{CtrlUp}
 
@@ -817,6 +985,16 @@ return
 	Escape::Exitapp
 
 	F12::
+		GoTo, ShowFolders
+	return
+
+	F11::
+		GoTo,ShowCPUGraph
+	return
+
+
+
+	ShowFolders:
 		Gui, 2:New
 		Gui,  +ToolWindow +alwaysontop
 		Gui,Add,Button,x+5 y+5 w50 h28, PC
@@ -831,6 +1009,48 @@ return
 		Gui,Add,Button,x+5  h28, AppData
 		Gui, Show,  Autosize, Folders
 	return
+
+	ShowCPUGraph:
+		Gui, 3:New
+		Gui +AlwaysOnTop +ToolWindow
+		Gui, Margin, 0, 0
+		Gui, Add, Text, w610 h111 hwndhGraph
+		pGraph1 := XGraph( hGraph, 0x191919, 1, "0,2,0,2", 0xFFFFFF )
+		Gui, Show,, CPU Load
+		SetTimer, XGraph_Plot, 100
+
+		XGraph_Plot:
+			CPUL := CPULoad()
+			XGraph_Plot( pGraph1, 100 - CPUL, CPUL )
+		Return
+
+		3:GuiClose:
+		pGraph := XGraph_Detach( pGraph )
+		pGraph2 := XGraph_Detach( pGraph2 )
+		return
+
+		CPULoad() {
+		Static PIT, PKT, PUT
+		IfEqual, PIT,, Return 0, DllCall( "GetSystemTimes", "Int64P",PIT, "Int64P",PKT, "Int64P",PUT )
+
+		DllCall( "GetSystemTimes", "Int64P",CIT, "Int64P",CKT, "Int64P",CUT )
+		, IdleTime := PIT - CIT,    KernelTime := PKT - CKT,    UserTime := PUT - CUT
+		, SystemTime := KernelTime + UserTime 
+
+		Return ( ( SystemTime - IdleTime ) * 100 ) // SystemTime,    PIT := CIT,    PKT := CKT,    PUT := CUT 
+	}
+
+
+		; MemoryLoad()
+		; {
+		; 	static MEMORYSTATUSEX, init := NumPut(VarSetCapacity(MEMORYSTATUSEX, 64, 0), MEMORYSTATUSEX, "uint")
+		; 	if !(DllCall("GlobalMemoryStatusEx", "ptr", &MEMORYSTATUSEX))
+		; 		throw Exception("Call to GlobalMemoryStatusEx failed: " A_LastError, -1)
+		; 	return NumGet(MEMORYSTATUSEX, 4, "UInt")
+		; }
+
+		#Include XGraph.ahk
+return
 
 
 }
