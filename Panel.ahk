@@ -16,54 +16,60 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 
 { ; GUI MAIN TAB
 	Gui,Tab, Main
-	Gui,Add,Button,x10 y40 w50 h30,CMD
-	Gui,Add,Button,x+0.5 y40 w70 h30,PowerShell
-	Gui,Add,Button,x+0.5 y40 w50 h30,Control
-	Gui,Add,Button,x+0.5 y40 w40 h30,IE
-	Gui,Add,Button,x10 y70 w80 h30,Task Manager
-	Gui,Add,Button,x+0.5 y70 w60 h30,msconfig
-	Gui,Add,Button,x+0.5 y70 w43 h30,Edge
-	Gui,Add,Button,x+0.5 y70 w43 h30 gShowCPUGraph, CPU
+	Gui,Add,Button,x10 y35 w50 h30,		CMD
+	Gui,Add,Button,x+0.5 yp h30,		PowerShell
+	Gui,Add,Button,x+0.5 yp h30,		Control
+	Gui,Add,Button,x+0.5 yp h30 		gShowCPUGraph, CPU Graph
+	Gui,Add,Button,x10 y+2 h30,			Task Manager
+	Gui,Add,Button,x+0.5 yp h30,		msconfig
+	Gui,Add,Button,x+0.5 yp h30 w37,	Edge
+	Gui,Add,Button,x+0.5 yp h30 w37,	IE
 
-	Gui,Add,Button,x290 y40 w80 h40,Log Out
-	Gui,Add,Button,x370 y40 w100 h40,Reboot
-	Gui,Add,Button,x470 y40 w80 h40,Shut Down
-	Gui,Add,Button,x290 y90 w40 h27,Mute
-	Gui,Add,Button,x+0.5 y90 w40 h27,Vol 30
-	Gui,Add,Button,x+0.5 y90 w45 h27,Vol 100
-	Gui,Add,Button,x+2 y90 w63 h27 gMainNotepad, Notepad
-	Gui,Add,Button,x+0.5 y90 w70 h27 gMainWordpad, Wordpad
+	Gui,Add,Button,x290 y35 w80 h35,	Log Out
+	Gui,Add,Button,x+1 y35 w100 h35,	Reboot
+	Gui,Add,Button,x+1 y35 w80 h35,		Shut Down
 
-	Gui,Add,Text,x10 y110 w70 h20,Control Panel
-	Gui,Add,Button,x10 y130 w40 h30,Time
-	Gui,Add,Button,x+0.5 y130 w60 h30,Network
-	Gui,Add,Button,x+0.5 y130 w60 h30,Update
-	Gui,Add,Button,x+0.5 y130 w60 h30,Language
-	Gui,Add,Button,x10 y160 w60 h30,System
-	Gui,Add,Button,x+0.5 y160 w50 h30,Display
-	Gui,Add,Button,x+0.5 y160 w70 h30,Power Plan
-	Gui,Add,Button,x+0.5 y160 w50 h30,Desktop
-	Gui,Add,Button,x10 y190 w90 h30,Internet Settings
-	Gui,Add,Button,x+0.5 y190 w100 h30,Device Manager
-	Gui,Add,Button,x+0.5 y190 w60 h30,Devices
-	Gui,Add,Button,x10 y220 w60 h30,Programs
-	Gui,Add,Button,x+0.5 y220 w100 h30,Default Programs
-	Gui,Add,Button,x+0.5 y220 w50 h30,Sound
-	Gui,Add,Button,x10 y250 w90 h30,User Accounts
-	Gui,Add,Button,x+0.5 y250 w50 h30,Hosts
-	Gui,Add,Button,x+0.5 y250 w70 h30,Host Folder
+	Gui,Add,Button,x290 y+4 w40 h30,	Mute
+	Gui,Add,Button,x+0.5 yp w40 h30,	Vol 30
+	Gui,Add,Button,x+0.5 yp w45 h30,	Vol 100
+	Gui,Add,Button,x+2 yp w63 h30 		gMainNotepad, Notepad
+	Gui,Add,Button,x+0.5 yp w70 h30 	gMainWordpad, Wordpad
+
+	Gui,Add,Text,x10 y105 w70 h20,      Control Panel
+
+	Gui,Add,Button,x10 y+1 w40 h30,    	Time
+	Gui,Add,Button,x+0.5 yp w60 h30,	Network
+	Gui,Add,Button,x+0.5 yp w60 h30,	Update
+	Gui,Add,Button,x+0.5 yp w60 h30,	Language
+
+	Gui,Add,Button,x10 y+1 w60 h30,		System
+	Gui,Add,Button,x+0.5 yp w50 h30,	Display
+	Gui,Add,Button,x+0.5 yp w70 h30,	Power Plan
+	Gui,Add,Button,x+0.5 yp w50 h30,	Desktop
+
+	Gui,Add,Button,x10 y+1 w90 h30,		Internet Settings
+	Gui,Add,Button,x+0.5 yp w100 h30,	Device Manager
+	Gui,Add,Button,x+0.5 yp w60 h30,	Devices
+
+	Gui,Add,Button,x10 y+1 w60 h30,		Programs
+	Gui,Add,Button,x+0.5 yp w100 h30,	Default Programs
+	Gui,Add,Button,x+0.5 yp w50 h30,	Sound
+
+	Gui,Add,Button,x10 y+1 w90 h30,		User Accounts
+	Gui,Add,Button,x+0.5 yp w50 h30,	Hosts
+	Gui,Add,Button,x+0.5 yp w70 h30,	Host Folder
 
 	; Folders
-	Gui,Add,Button,x290 y160 w40 h30,PC
-	Gui,Add,Button,x+0.5 y160 w40 h30,C:\
-	Gui,Add,Button,x+0.5 y160 w40 h30,Prog
-	Gui,Add,Button,x+0.5 y160 w70 h30,User Folder
-	Gui,Add,Button,x+0.5 y160 w60 h30,AppData
-	Gui,Add,Button,x290 y190 w100 h30,Program Files x86
-	Gui,Add,Button,x+0.5 y190 w100 h30,Program Files x64
-	Gui,Add,Button,x290 y220 w50 h30,Start
-	Gui,Add,Button,x+0.5 y220 w70 h30,User Start
-	Gui,Add,Button,x+0.5 y220 w120 h30 gINSW, List installed software
+	Gui,Add,Button,x290 y160 w40 h30,	PC
+	Gui,Add,Button,x+0.5 y160 w40 h30,	C:\
+	Gui,Add,Button,x+0.5 y160 w40 h30,	Prog
+	Gui,Add,Button,x+0.5 y160 w70 h30,	User Folder
+	Gui,Add,Button,x+0.5 y160 w60 h30,	AppData
+	Gui,Add,Button,x290 y190 w100 h30,	Program Files x86
+	Gui,Add,Button,x+0.5 y190 w100 h30,	Program Files x64
+	Gui,Add,Button,x290 y220 w50 h30,	Start
+	Gui,Add,Button,x+0.5 y220 w70 h30,	User Start
+	Gui,Add,Button,x+0.5 y220 w120 h30 	gINSW, List installed software
 
 	Gui,Add,Checkbox,x295 y130  gAlwaysOnTop vAlwaysOnTopVar, Always on Top
 	Gui,Add,Checkbox,x+10 y130 gPreventSleep vPreventSleepVar, Prevent Sleep
@@ -85,7 +91,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vInstallFlash,       		Flash
 	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vInstallSilverlight,   		Silverlight
 	Gui,Add,Checkbox,x10 y+0.5 w90 h20 		vInstallImDiskToolkit,   	ImDisk Toolkit
-    Gui,Add,Checkbox,x10 y+0.5 w80 h20  	vInstallQuicklook,    		Quicklook
+	Gui,Add,Checkbox,x10 y+0.5 w80 h20  	vInstallQuicklook,    		Quicklook
 	; COL 2
 	Gui,Add,Checkbox,x120 y30 w70 h20   	vInstallLibreOffice,   		LibreOffice
 	Gui,Add,Checkbox,x120 y+0.5 w90 h20   	vInstallAdobeReader,   		AdobeReader
@@ -227,7 +233,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
 					. "Modell:`t`t"     Win32_VC[2]
 
-	Gui, Add, Text, x450 y40, Panel v1.05
+	Gui, Add, Text, x450 y40, Panel v1.06
 }
 
 { ; GUI HOTKEYS TAB
@@ -685,11 +691,11 @@ return
 
 	chocoDefaults:
 		; Run *runas %comspec% /k choco install 7zip vlc adobereader googlechrome -y
-		GuiControl,, Chrome, 1
-		GuiControl,, 7zip, 1
-		GuiControl,, adobereader, 1
-		GuiControl,, RedistALL, 1
-		GuiControl,, DotnetALL, 1
+		GuiControl,, InstallChrome, 1
+		GuiControl,, Install7zip, 1
+		GuiControl,, Installadobereader, 1
+		GuiControl,, InstallRedistALL, 1
+		GuiControl,, InstallDotnetALL, 1
 	return
 
 	ChocoInstall1:
@@ -1099,9 +1105,9 @@ return
 
 		DllCall( "GetSystemTimes", "Int64P",CIT, "Int64P",CKT, "Int64P",CUT )
 		, IdleTime := PIT - CIT,    KernelTime := PKT - CKT,    UserTime := PUT - CUT
-		, SystemTime := KernelTime + UserTime 
+		, SystemTime := KernelTime + UserTime
 
-		Return ( ( SystemTime - IdleTime ) * 100 ) // SystemTime,    PIT := CIT,    PKT := CKT,    PUT := CUT 
+		Return ( ( SystemTime - IdleTime ) * 100 ) // SystemTime,    PIT := CIT,    PKT := CKT,    PUT := CUT
 	}
 
 
