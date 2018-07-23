@@ -15,6 +15,7 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 	- To use the installation feature, you need to have Chocolatey installed or install it with clicking the *CMD-* or *PS Install* buttons, which will run the command to install Chocolatey.
 - KDE-style alt+drag window moving and resizing. Original script by [Jonny](https://autohotkey.com/docs/scripts/EasyWindowDrag_(KDE).htm) from [Autohotkey script showcase](https://autohotkey.com/docs/scripts/)
 - Floating panel to quickly open common folders
+- CPU usage graph with [XGraph](https://autohotkey.com/boards/viewtopic.php?t=3492) library
 
 
 **Hotkeys**
@@ -42,6 +43,7 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 	- hotword `ccs ` Settings
 	- hotword `ccs ` Extensions
 	- hotword `ccw ` Chrome Web Store
+	- hotword `ccb ` Bookmarks
 	- hotword `cca ` About
 - **Panel**
 	- `F1` cmd.exe
@@ -51,6 +53,7 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 	- `F7` run WUMT.exe (Windows Update Minitool, needs to be in the same directory as Panel)
 	- `F8` Run portable CCleaner (needs to be in the same directory)
 	- `F9` Windows Update
+	- `F11` Show CPU usage graph
 	- `F12` Open Folders panel that stays on top of other windows
 	- `alt + q` UAC settings
 	- `alt + w` Control Panel

@@ -75,73 +75,78 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 { ; GUI INSTALLATION TAB
 	Gui,Tab, Install
 	; COL 1
-	Gui,Add,Checkbox,x10 y30 w90 h20  		vChrome,      		GoogleChrome
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20  	vOpera,       		Opera
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vFirefox,     		Firefox
-	Gui,Add,Checkbox,x10 y+10 w50 h20  		v7zip,        		7-Zip
-	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vSkype,       		Skype
-	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vCCleaner,    		CCleaner
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vJava,        		Java
-	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vFlash,       		Flash
-	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vSilverlight,   	Silverlight
-	Gui,Add,Checkbox,x10 y+0.5 w90 h20 		vImDiskToolkit,   	ImDisk Toolkit
-    Gui,Add,Checkbox,x10 y+0.5 w80 h20  	vQuicklook,    		Quicklook
+	Gui,Add,Checkbox,x10 y30 w90 h20  		vInstallChrome,      		GoogleChrome
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20  	vInstallOpera,       		Opera
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vInstallFirefox,     		Firefox
+	Gui,Add,Checkbox,x10 y+10 w50 h20  		vInstall7zip,        		7-Zip
+	Gui,Add,Checkbox,x10 y+0.5 w60 h20  	vInstallSkype,       		Skype
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vInstallCCleaner,    		CCleaner
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vInstallJava,        		Java
+	Gui,Add,Checkbox,x10 y+0.5 w50 h20 		vInstallFlash,       		Flash
+	Gui,Add,Checkbox,x10 y+0.5 w70 h20 		vInstallSilverlight,   		Silverlight
+	Gui,Add,Checkbox,x10 y+0.5 w90 h20 		vInstallImDiskToolkit,   	ImDisk Toolkit
+    Gui,Add,Checkbox,x10 y+0.5 w80 h20  	vInstallQuicklook,    		Quicklook
 	; COL 2
-	Gui,Add,Checkbox,x120 y30 w70 h20   	vLibreOffice,   	LibreOffice
-	Gui,Add,Checkbox,x120 y+0.5 w90 h20   	vAdobeReader,   	AdobeReader
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vThunderbird,   	Thunderbird
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vSumatraPDF,    	SumatraPDF
-	Gui,Add,Checkbox,x120 y+10 w60 h20  	vSpotify,     		Spotify
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vFoobar,      		Foobar2000
-	Gui,Add,Checkbox,x120 y+0.5 w50 h20  	vVLC,       		VLC
-	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vKLite,       		K-Lite Full
-	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vQuicktime,     	QuickTime
-	Gui,Add,Checkbox,x120 y+0.5 w60 h20  	viTunes,      		iTunes
-	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vNaps2,       		Naps2
+	Gui,Add,Checkbox,x120 y30 w70 h20   	vInstallLibreOffice,   		LibreOffice
+	Gui,Add,Checkbox,x120 y+0.5 w90 h20   	vInstallAdobeReader,   		AdobeReader
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vInstallThunderbird,   		Thunderbird
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20   	vInstallSumatraPDF,    		SumatraPDF
+	Gui,Add,Checkbox,x120 y+10 w60 h20  	vInstallSpotify,     		Spotify
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vInstallFoobar,      		Foobar2000
+	Gui,Add,Checkbox,x120 y+0.5 w50 h20  	vInstallVLC,       			VLC
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vInstallKLite,       		K-Lite Full
+	Gui,Add,Checkbox,x120 y+0.5 w70 h20  	vInstallQuicktime,     		QuickTime
+	Gui,Add,Checkbox,x120 y+0.5 w60 h20  	vInstalliTunes,      		iTunes
+	Gui,Add,Checkbox,x120 y+0.5 w80 h20  	vInstallNaps2,       		Naps2
 	;COL 3
-	Gui,Add,Checkbox,x230 y30 w70 h20   	vDropbox,     		Dropbox
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20   	vGoogleDrive,   	Google Drive
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20   	vOneDrive,      	OneDrive
-	Gui,Add,Checkbox,x230 y+10 w50 h20  	vGIMP,        		GIMP
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vIrfanview,   		IfranView
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20		vPaint,       		Paint.NET
-	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vInkscape,      	Inkscape
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vImageglass,      	ImageGlass
-	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vMalwarebytes,    	Malwarebytes
-	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vRevoUninstaller, 	Revo Unins.
+	Gui,Add,Checkbox,x230 y30 w70 h20   	vInstallDropbox,     		Dropbox
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20   	vInstallGoogleDrive,   		Google Drive
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20   	vInstallOneDrive,      		OneDrive
+	Gui,Add,Checkbox,x230 y+10 w50 h20  	vInstallGIMP,        		GIMP
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vInstallIrfanview,   		IfranView
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20		vInstallPaint,       		Paint.NET
+	Gui,Add,Checkbox,x230 y+0.5 w70 h20  	vInstallInkscape,      		Inkscape
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vInstallImageglass,      	ImageGlass
+	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vInstallMalwarebytes,    	Malwarebytes
+	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vInstallRevoUninstaller, 	Revo Unins.
+	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vInstallTreeSizeFree, 		TreeSizeFree
+
 	; COL 4
-	Gui,Add,Checkbox,x330 y30 w80 h20   	vNotepadplusplus, 	Notepad++
-	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vVisualStudioCode,	VS Code
-	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vProcessExplorer, 	Process Explorer
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20   	vFileZilla,     	FileZilla
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vPutty,       		Putty
+	Gui,Add,Checkbox,x330 y30 w80 h20   	vInstallNotepadplusplus, 	Notepad++
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vInstallVisualStudioCode,	VS Code
+	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vInstallProcessExplorer, 	Process Explorer
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20   	vInstallFileZilla,     		FileZilla
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallPutty,       		Putty
 
-	Gui,Add,Checkbox,x330 y160 w70 h20  	vRedistALL,     	All
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2008,      		2008
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2010,      		2010
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2012,      		2012
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2013,      		2013
-	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vVC2015,      		2015
+	Gui,Add,Checkbox,x330 y160 w70 h20  	vInstallRedistAll,     		All
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallVC2008,      		2008
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallVC2010,      		2010
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallVC2012,      		2012
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallVC2013,      		2013
+	Gui,Add,Checkbox,x330 y+0.5 w70 h20  	vInstallVC2015,      		2015
 
-	Gui,Add,Checkbox,x400 y160 w70 h20  	vDotnetALL,     	All
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet35,      	3.5
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet40,      	4.0
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet45,      	4.5
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet46,      	4.6
-	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vDotnet461,     	4.6.1
+	Gui,Add,Checkbox,x400 y160 w70 h20  	vInstallDotnetAll,     		All
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vInstallDotnet35,      		3.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vInstallDotnet40,      		4.0
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vInstallDotnet45,      		4.5
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vInstallDotnet46,      		4.6
+	Gui,Add,Checkbox,x400 y+0.5 w70 h20  	vInstallDotnet461,     		4.6.1
+	; COL 5
+	Gui,Add,Checkbox,x470 y30 w80 h20   	vClassicShell,    			Classic Shell
+	Gui,Add,Checkbox,x470 y50 w105 h20  	vClassicShellStart, 		Classic Start
 
 	Gui,Add,Text,x330 y145 w70 h15,   		VC Redist
 	Gui,Add,Text,x400 y145 w60 h15,   		.NET
 
-	Gui,Add,Button,x470 y170 w80 h40  		gDefaultChoco,    	Default Install
-	Gui,Add,Button,x470 y90 w80 h30   		gInstallChoco2,   	CMD Install
-	Gui,Add,Button,x470 y120 w80 h30  		gInstallChoco1,   	PS Install
-	Gui,Add,Button,x470 y210 w80 h30  		gUpdateChoco,   	Update All
-	Gui,Add,Button,x470 y240 w80 h40,           				Install
+	Gui,Add,Button,x470 y80 w80 h30   		gChocoInstall1,   			Install choco
+	; Gui,Add,Button,x470 y+1 w80 h27  		gInstallChoco2,   			PS Install
+	Gui,Add,Button,x470 y+10 w80 h27  		gChocoDefaults,    			Defaults
+	Gui,Add,Button,x470 y+1 w80 h27  		gChocoClear,    			Clear
 
-	; COL 5
-	Gui,Add,Checkbox,x470 y30 w80 h20   	vClassicShell,    	Classic Shell
-	Gui,Add,Checkbox,x470 y50 w105 h20  	vClassicShellStart, Classic Start
+	Gui,Add,Button,x470 y+1 w80 h27			gChocoList,					List installed
+	Gui,Add,Button,x470 y+1 w80 h27  		gChocoUpdate,   			Update All
+	Gui,Add,Button,x470 y+10 w80 h35,           						Install
+
 
 }
 
@@ -264,8 +269,8 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui, Add, Text, xp y+4, F8  -  CCleaner
 	Gui, Add, Text, xp y+4, F9  -  Windows Update
 	; Gui, Add, Text, xp y+4, F10  -
-	; Gui, Add, Text, xp y+4, F11  -
-	; Gui, Add, Text, xp y+4, F12  -
+	Gui, Add, Text, xp y+4, F11  - Show CPU usage graph
+	Gui, Add, Text, xp y+4, F12  - Show folders GUI
 	Gui, Add, Text, xp y+4, Alt+Q  -  UAC Settings
 	Gui, Add, Text, xp y+4, Alt+W  -  Control panel
 	Gui, Add, Text, xp y+4, Alt+D  -  Task Manager
@@ -301,14 +306,11 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 
 	Gui,Add,Checkbox,x100 y+10 w150 h20	vRunLoadTabs, Load browser tabs
 
-
-
-
-	Gui,Add,Button, x450 y40 h30 w100 gRunDefaults, Defaults
-	Gui,Add,Button, x450 y+2 h30 w100 gRunOffice, Office
-	Gui,Add,Button, x450 y+2 h30 w100 gRunBench, Bench
-	Gui,Add,Button, x450 y+2 h30 w100 gRunClear, Clear
-	Gui,Add,Button, x450 y+30 h45 w100 gRunSelected, Run
+	Gui,Add,Button, x450 y40 h30 w100 	gRunDefaults, Defaults
+	Gui,Add,Button, x450 y+2 h30 w100 	gRunOffice, Office
+	Gui,Add,Button, x450 y+2 h30 w100 	gRunBench, Bench
+	Gui,Add,Button, x450 y+2 h30 w100 	gRunClear, Clear
+	Gui,Add,Button, x450 y+30 h45 w100 	gRunSelected, Run
 
 }
 
@@ -522,163 +524,166 @@ return
 	Gui, Submit, NoHide
 	myListOfPrograms := "choco install "
 
-	If Chrome = 1
+	If InstallChrome = 1
 	myListOfPrograms .= " googlechrome"
 
-	If LibreOffice = 1
+	If InstallLibreOffice = 1
 	myListOfPrograms .= " libreoffice-fresh"
 
-	If Dropbox = 1
+	If InstallDropbox = 1
 	myListOfPrograms .= " dropbox"
 
-	If RevoUninstaller = 1
+	If InstallRevoUninstaller = 1
 	myListOfPrograms .= " revo.uninstaller"
 
-	If ClassicShell = 1
+	If InstallTreeSizeFree = 1
+	myListOfPrograms .= " treesizefree"
+
+	If InstallClassicShell = 1
 	myListOfPrograms .= " classic-shell"
 
-	If ClassicShellStart = 1
+	If InstallClassicShellStart = 1
 	myListOfPrograms .= " classic-shell -installArgs ADDLOCAL=ClassicStartMenu"
 
-	If Opera = 1
+	If InstallOpera = 1
 	myListOfPrograms .= " opera"
 
-	If AdobeReader = 1
+	If InstallAdobeReader = 1
 	myListOfPrograms .= " adobereader"
 
-	If SumatraPDF = 1
+	If InstallSumatraPDF = 1
 	myListOfPrograms .= " sumatrapdf.install"
 
-	If GoogleDrive = 1
+	If InstallGoogleDrive = 1
 	myListOfPrograms .= " googledrive"
 
-	If notepadplusplus = 1
+	If Installnotepadplusplus = 1
 	myListOfPrograms .= " notepadplusplus.install"
 
-	If VisualStudioCode = 1
+	If InstallVisualStudioCode = 1
 	myListOfPrograms .= " visualstudiocode"
 
-	If Firefox = 1
+	If InstallFirefox = 1
 	myListOfPrograms .= " firefox"
 
-	If Thunderbird = 1
+	If InstallThunderbird = 1
 	myListOfPrograms .= " thunderbird"
 
-	If OneDrive = 1
+	If InstallOneDrive = 1
 	myListOfPrograms .= " onedrive"
 
-	If ProcessExplorer = 1
+	If InstallProcessExplorer = 1
 	myListOfPrograms .= " procexp"
 
-	If filezilla = 1
+	If Installfilezilla = 1
 	myListOfPrograms .= " filezilla"
 
-	If 7zip = 1
+	If Install7zip = 1
 	myListOfPrograms .= " 7zip.install"
 
-	If putty = 1
+	If Installputty = 1
 	myListOfPrograms .= " putty"
 
-	If skype = 1
+	If Installskype = 1
 	myListOfPrograms .= " skype"
 
-	If spotify = 1
+	If Installspotify = 1
 	myListOfPrograms .= " spotify"
 
-	If ccleaner = 1
+	If Installccleaner = 1
 	myListOfPrograms .= " ccleaner"
 
-	If foobar = 1
+	If Installfoobar = 1
 	myListOfPrograms .= " foobar2000"
 
-	If irfanview = 1
+	If Installirfanview = 1
 	myListOfPrograms .= " irfanview irfanviewplugins"
 
-	If vlc = 1
+	If Installvlc = 1
 	myListOfPrograms .= " vlc"
 
-	If java = 1
+	If Installjava = 1
 	myListOfPrograms .= " javaruntime"
 
-	If paint = 1
+	If Installpaint = 1
 	myListOfPrograms .= " paint.net"
 
-	If klite = 1
+	If Installklite = 1
 	myListOfPrograms .= " k-litecodecpackfull"
 
-	If flash = 1
+	If Installflash = 1
 	myListOfPrograms .= " flashplayerplugin flashplayeractivex"
 
-	If inkscape = 1
+	If Installinkscape = 1
 	myListOfPrograms .= " inkscape"
 
-	If imageglass = 1
+	If Installimageglass = 1
 	myListOfPrograms .= " imageglass"
 
-	If quicktime = 1
+	If Installquicktime = 1
 	myListOfPrograms .= " quicktime"
 
-	If silverlight = 1
+	If Installsilverlight = 1
 	myListOfPrograms .= " silverlight"
 
-	If imdisk = 1
+	If Installimdisk = 1
 	myListOfPrograms .= " imdisk"
 
-	If imdisktoolkit = 1
+	If Installimdisktoolkit = 1
 	myListOfPrograms .= " imdisk-toolkit"
 
-	If itunes = 1
+	If Installitunes = 1
 	myListOfPrograms .= " itunes"
 
-	If malwarebytes = 1
+	If Installmalwarebytes = 1
 	myListOfPrograms .= " malwarebytes"
 
-	If Naps2 = 1
+	If InstallNaps2 = 1
 	myListOfPrograms .= " naps2"
 
-    If Quicklook = 1
+	If InstallQuicklook = 1
 	myListOfPrograms .= " quicklook"
 
-	If vc2008 = 1
+	If Installvc2008 = 1
 	myListOfPrograms .= " vcredist2008"
 
-	If vc2010 = 1
+	If Installvc2010 = 1
 	myListOfPrograms .= " vcredist2010"
 
-	If vc2012 = 1
+	If Installvc2012 = 1
 	myListOfPrograms .= " vcredist2012"
 
-	If vc2013 = 1
+	If Installvc2013 = 1
 	myListOfPrograms .= " vcredist2013"
 
-	If vc2015 = 1
+	If Installvc2015 = 1
 	myListOfPrograms .= " vcredist2015"
 
-	If dotnet35 = 1
+	If Installdotnet35 = 1
 	myListOfPrograms .= " dotnet3.5"
 
-	If dotnet40 = 1
+	If Installdotnet40 = 1
 	myListOfPrograms .= " dotnet4.0"
 
-	If dotnet45 = 1
+	If Installdotnet45 = 1
 	myListOfPrograms .= " dotnet4.5"
 
-	If dotnet46 = 1
+	If Installdotnet46 = 1
 	myListOfPrograms .= " dotnet4.6"
 
-	If dotnet461 = 1
+	If Installdotnet461 = 1
 	myListOfPrograms .= " dotnet4.6.1"
 
-	If dotnetALL = 1
+	If InstalldotnetAll = 1
 	myListOfPrograms .= " dotnet3.5 dotnet4.0 dotnet4.5 dotnet4.6 dotnet4.6.1 dotnet4.7"
 
-	If redistALL = 1
+	If InstallredistAll = 1
 	myListOfPrograms .= " vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017"
 
 	Run *runas %comspec% /k %myListOfPrograms% -y
 	return
 
-	DefaultChoco:
+	chocoDefaults:
 		; Run *runas %comspec% /k choco install 7zip vlc adobereader googlechrome -y
 		GuiControl,, Chrome, 1
 		GuiControl,, 7zip, 1
@@ -687,16 +692,75 @@ return
 		GuiControl,, DotnetALL, 1
 	return
 
-	InstallChoco1:
-		Run *runas powershell.exe iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-	return
-
-	InstallChoco2:
+	ChocoInstall1:
 		Run *runas %comspec% /k @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 	return
 
-	UpdateChoco:
+	ChocoInstall2:
+		Run *runas powershell.exe iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+	return
+
+	ChocoUpdate:
 		Run *runas %comspec% /k cup all -y
+	return
+
+	ChocoList:
+		Run *runas %comspec% /k choco list --local-only
+	return
+
+	ChocoClear:
+		GuiControl,,InstallChrome, 0
+		GuiControl,,InstallOpera, 0
+		GuiControl,,InstallFirefox, 0
+		GuiControl,,Install7zip, 0
+		GuiControl,,InstallSkype, 0
+		GuiControl,,InstallCCleaner, 0
+		GuiControl,,InstallJava, 0
+		GuiControl,,InstallFlash, 0
+		GuiControl,,InstallSilverlight, 0
+		GuiControl,,InstallImDiskToolkit, 0
+		GuiControl,,InstallQuicklook, 0
+		GuiControl,,InstallLibreOffice, 0
+		GuiControl,,InstallAdobeReader, 0
+		GuiControl,,InstallThunderbird, 0
+		GuiControl,,InstallSumatraPDF, 0
+		GuiControl,,InstallSpotify, 0
+		GuiControl,,InstallFoobar, 0
+		GuiControl,,InstallVLC, 0
+		GuiControl,,InstallKLite, 0
+		GuiControl,,InstallQuicktime, 0
+		GuiControl,,InstalliTunes, 0
+		GuiControl,,InstallNaps2, 0
+		GuiControl,,InstallDropbox, 0
+		GuiControl,,InstallGoogleDrive, 0
+		GuiControl,,InstallOneDrive, 0
+		GuiControl,,InstallGIMP, 0
+		GuiControl,,InstallIrfanview, 0
+		GuiControl,,InstallPaint, 0
+		GuiControl,,InstallInkscape, 0
+		GuiControl,,InstallImageglass, 0
+		GuiControl,,InstallMalwarebytes, 0
+		GuiControl,,InstallRevoUninstaller, 0
+		GuiControl,,InstallTreeSizeFree, 0
+		GuiControl,,InstallNotepadplusplus, 0
+		GuiControl,,InstallVisualStudioCode, 0
+		GuiControl,,InstallProcessExplorer, 0
+		GuiControl,,InstallFileZilla, 0
+		GuiControl,,InstallPutty, 0
+		GuiControl,,InstallRedistALL, 0
+		GuiControl,,InstallVC2008, 0
+		GuiControl,,InstallVC2010, 0
+		GuiControl,,InstallVC2012, 0
+		GuiControl,,InstallVC2013, 0
+		GuiControl,,InstallVC2015, 0
+		GuiControl,,InstallDotnetALL, 0
+		GuiControl,,InstallDotnet35, 0
+		GuiControl,,InstallDotnet40, 0
+		GuiControl,,InstallDotnet45, 0
+		GuiControl,,InstallDotnet46, 0
+		GuiControl,,InstallDotnet461, 0
+		GuiControl,,InstallClassicShell, 0
+		GuiControl,,InstallClassicShellStart, 0
 	return
 }
 
