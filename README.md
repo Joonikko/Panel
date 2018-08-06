@@ -2,9 +2,7 @@
 
 *The missing GUI for Microsoft Windows*
 
-![](https://user-images.githubusercontent.com/5886751/35483587-a3d60e56-044c-11e8-8742-53e540236ee1.png)
-
-***
+![](https://user-images.githubusercontent.com/5886751/43706495-24890a24-996e-11e8-9ea9-0341e6ab4061.png)
 
 This application is made with [Autohotkey](https://autohotkey.com/) and the installation functionality uses the [Chocolatey package manager](https://chocolatey.org/).
 
@@ -38,7 +36,7 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 	- `Alt + W` Small icons
 	- `Alt + E` Content
 	- `Alt + A` Extra large icons
-- **Chrome**
+- **Chrome hotwords**
 	- `alt + scroll` change tabs
 	- hotword `ccs ` Settings
 	- hotword `ccs ` Extensions
@@ -60,11 +58,8 @@ This application is made with [Autohotkey](https://autohotkey.com/) and the inst
 	- `alt + d` Task Manager
 	- `alt + F1` Turn display off
 
+![](https://user-images.githubusercontent.com/5886751/43706494-246a8cde-996e-11e8-9c26-56f87ed6bc94.png)
 
-![](https://user-images.githubusercontent.com/5886751/35483953-145dfc84-0451-11e8-9659-e9c68ad06558.png)
+![](https://user-images.githubusercontent.com/5886751/43706493-244c1934-996e-11e8-8d64-4c9812235616.png)
 
-![ Press `F12`  to open this folder panel](https://user-images.githubusercontent.com/5886751/35483893-4340ce60-0450-11e8-9c74-5cbc4aafa8ab.png)
-
-
-
-
+![](https://user-images.githubusercontent.com/5886751/43706492-242a6df2-996e-11e8-936c-2983bd76f96a.png)
