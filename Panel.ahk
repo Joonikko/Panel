@@ -16,10 +16,11 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 
 { ; GUI MAIN TAB
 	Gui,Tab, Main
-	Gui,Add,Button,x10 y35 w50 h30,		CMD
-	Gui,Add,Button,x+0.5 yp h30,		PowerShell
-	Gui,Add,Button,x+0.5 yp h30,		Control
+	Gui,Add,Button,x10 y35 w40 h30,		CMD
+	Gui,Add,Button,x+0.5 yp h30,		PS
+	Gui,Add,Button,x+0.5 yp h30 ,		Control
 	Gui,Add,Button,x+0.5 yp h30 		gShowCPUGraph, CPU Graph
+
 	Gui,Add,Button,x10 y+2 h30,			Task Manager
 	Gui,Add,Button,x+0.5 yp h30,		msconfig
 	Gui,Add,Button,x+0.5 yp h30 w37,	Edge
@@ -361,7 +362,7 @@ return
 		Run *runas cmd
 	return
 
-	ButtonPowerShell:
+	ButtonPS:
 		Run *runas powershell.exe
 	return
 
@@ -373,15 +374,25 @@ return
 		Run taskmgr.exe
 	return
 
-	ButtonIE:
-		Run iexplore.exe
-	return
-
 	Buttonmsconfig:
 		run msconfig
 	return
 
+	ButtonIE:
+	If GetKeyState("SHIFT","P")
+		Run, iexplore.exe -private
+	else If GetKeyState("CTRL","P")
+		Run chrome.exe -incognito
+	else
+		run, iexplore.exe
+	return
+
 	ButtonEdge:
+	If GetKeyState("SHIFT","P")
+		Run, cmd.exe /c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private
+	else If GetKeyState("CTRL","P")
+		Run chrome.exe
+	else
 		run microsoft-edge:
 	return
 
@@ -398,15 +409,36 @@ return
 	return
 
 	ButtonLogOut:
-		Run *runas %comspec% /k shutdown -l
+		If GetKeyState("SHIFT","P")
+			Run *runas %comspec% /k shutdown -l
+		else
+			MsgBox, 1,Log out, Are you sure you want to log out?
+			IfMsgBox OK
+				Run *runas %comspec% /k shutdown -l
+			else IfMsgBox Cancel
+				return
 	return
 
 	ButtonReboot:
-		Run *runas %comspec% /k shutdown -t 0 -r
+		If GetKeyState("SHIFT","P")
+			Run *runas %comspec% /k shutdown -t 0 -r
+		else
+			MsgBox, 1,Reboot, Are you sure you want to Reboot?
+			IfMsgBox OK
+				Run *runas %comspec% /k shutdown -t 0 -r
+			else IfMsgBox Cancel
+				return
 	return
 
 	ButtonShutDown:
+	If GetKeyState("SHIFT","P")
 		Run *runas %comspec% /k shutdown -t 0 -s
+	else
+		MsgBox, 1,Shutdown, Are you sure you want to shutdown?
+		IfMsgBox OK
+			Run *runas %comspec% /k shutdown -t 0 -s
+		else IfMsgBox Cancel
+			return
 	return
 
 	MainNotepad:
@@ -465,6 +497,7 @@ return
 	return
 
 	ButtonUserAccounts:
+
 		Run, control /name Microsoft.UserAccounts
 	return
 
@@ -771,120 +804,120 @@ return
 }
 
 { ; BUTTON COMMANDS - Run
-RunSelected:
-	Gui, Submit, NoHide
+	RunSelected:
+		Gui, Submit, NoHide
 
-	if RunChrome = 1
-	Run, Chrome.exe
+		if RunChrome = 1
+		Run, Chrome.exe
 
-	if RunFirefox = 1
-	Run, firefox.exe
+		if RunFirefox = 1
+		Run, firefox.exe
 
-	if RunOpera = 1
-	Run, opera.exe
+		if RunOpera = 1
+		Run, opera.exe
 
-	if RunEdge = 1
-	Run, microsoft-edge:
+		if RunEdge = 1
+		Run, microsoft-edge:
 
-	if RunIE = 1
-	Run, iexplore.exe
+		if RunIE = 1
+		Run, iexplore.exe
 
-	if RunAcrobat = 1
-	Run, AcroRd32.exe
+		if RunAcrobat = 1
+		Run, AcroRd32.exe
 
-	if RunWordpad = 1
-	Run, wordpad.exe
+		if RunWordpad = 1
+		Run, wordpad.exe
 
-	if RunNotepad = 1
-	Run, notepad.exe
+		if RunNotepad = 1
+		Run, notepad.exe
 
-	if RunNotepadpp = 1
-	Run, notepad++.exe
+		if RunNotepadpp = 1
+		Run, notepad++.exe
 
-	if RunVLC = 1
-	Run, vlc.exe
+		if RunVLC = 1
+		Run, vlc.exe
 
-	if Run7zip = 1
-	Run, 7zFM.exe
+		if Run7zip = 1
+		Run, 7zFM.exe
 
-	if RunWord = 1
-	Run, WINWORD.EXE
+		if RunWord = 1
+		Run, WINWORD.EXE
 
-	if RunExcel = 1
-	Run, EXCEL.exe
+		if RunExcel = 1
+		Run, EXCEL.exe
 
-	if RunPowerPoint = 1
-	Run, POWERPNT.exe
+		if RunPowerPoint = 1
+		Run, POWERPNT.exe
 
-	if RunOutlook = 1
-	Run, outlook.exe
+		if RunOutlook = 1
+		Run, outlook.exe
 
-	if RunLibreOffice = 1
-	Run, soffice.exe
+		if RunLibreOffice = 1
+		Run, soffice.exe
 
-	if RunSpotify = 1
-	Run, C:\Users\%A_UserName%\AppData\Roaming\Spotify\Spotify.exe
+		if RunSpotify = 1
+		Run, C:\Users\%A_UserName%\AppData\Roaming\Spotify\Spotify.exe
 
-	if RunMsconfig = 1
-	Run, msconfig
+		if RunMsconfig = 1
+		Run, msconfig
 
-	if RunTaskManager = 1
-	Run, taskmgr.exe
+		if RunTaskManager = 1
+		Run, taskmgr.exe
 
-	if RunLoadTabs = 1
-	Run, Chrome.exe "fast.com" "http://ilmatieteenlaitos.fi/" "https://www.google.fi/" "http://yle.fi/uutiset" "https://yle.fi/" "https://areena.yle.fi/tv" "https://github.com/" "euronics.fi" "https://www.f-secure.com/fi_FI/web/home_fi/home"
+		if RunLoadTabs = 1
+		Run, Chrome.exe "fast.com" "http://ilmatieteenlaitos.fi/" "https://www.google.fi/" "http://yle.fi/uutiset" "https://yle.fi/" "https://areena.yle.fi/tv" "https://github.com/" "euronics.fi" "https://www.f-secure.com/fi_FI/web/home_fi/home"
 
-return
+	return
 
 
-RunDefaults:
-	GuiControl,, RunChrome, 1
-	GuiControl,, RunEdge, 1
-	GuiControl,, RunIE, 1
-	GuiControl,, RunAcrobat, 1
-	GuiControl,, Run7zip, 1
-return
+	RunDefaults:
+		GuiControl,, RunChrome, 1
+		GuiControl,, RunEdge, 1
+		GuiControl,, RunIE, 1
+		GuiControl,, RunAcrobat, 1
+		GuiControl,, Run7zip, 1
+	return
 
-RunOffice:
-	GuiControl,, RunWord, 1
-	GuiControl,, RunExcel, 1
-	GuiControl,, RunPowerPoint, 1
-	GuiControl,, Outlook, 1
-return
+	RunOffice:
+		GuiControl,, RunWord, 1
+		GuiControl,, RunExcel, 1
+		GuiControl,, RunPowerPoint, 1
+		GuiControl,, Outlook, 1
+	return
 
-RunBench:
-	GuiControl,, RunChrome, 1
-	GuiControl,, RunEdge, 1
-	GuiControl,, RunIE, 1
-	GuiControl,, RunAcrobat, 1
-	GuiControl,, RunWordpad, 1
-	GuiControl,, RunNotepad, 1
-	GuiControl,, Run7zip, 1
-	GuiControl,, RunLoadTabs, 1
-return
+	RunBench:
+		GuiControl,, RunChrome, 1
+		GuiControl,, RunEdge, 1
+		GuiControl,, RunIE, 1
+		GuiControl,, RunAcrobat, 1
+		GuiControl,, RunWordpad, 1
+		GuiControl,, RunNotepad, 1
+		GuiControl,, Run7zip, 1
+		GuiControl,, RunLoadTabs, 1
+	return
 
-RunClear:
-	GuiControl,, RunChrome, 0
-	GuiControl,, RunFirefox, 0
-	GuiControl,, RunOpera, 0
-	GuiControl,, RunEdge, 0
-	GuiControl,, RunIE, 0
-	GuiControl,, RunAcrobat, 0
-	GuiControl,, RunWordpad, 0
-	GuiControl,, RunNotepad, 0
-	GuiControl,, RunNotepadpp, 0
-	GuiControl,, RunVLC, 0
-	GuiControl,, Run7zip, 0
-	GuiControl,, RunWord, 0
-	GuiControl,, RunExcel, 0
-	GuiControl,, RunPowerPoint, 0
-	GuiControl,, RunLibreOffice, 0
-	GuiControl,, RunOutlook, 0
-	GuiControl,, RunSpotify, 0
-	GuiControl,, Runmsconfig, 0
-	GuiControl,, RunTaskManager, 0
-	GuiControl,, RunLoadTabs, 0
-return
+	RunClear:
+		GuiControl,, RunChrome, 0
+		GuiControl,, RunFirefox, 0
+		GuiControl,, RunOpera, 0
+		GuiControl,, RunEdge, 0
+		GuiControl,, RunIE, 0
+		GuiControl,, RunAcrobat, 0
+		GuiControl,, RunWordpad, 0
+		GuiControl,, RunNotepad, 0
+		GuiControl,, RunNotepadpp, 0
+		GuiControl,, RunVLC, 0
+		GuiControl,, Run7zip, 0
+		GuiControl,, RunWord, 0
+		GuiControl,, RunExcel, 0
+		GuiControl,, RunPowerPoint, 0
+		GuiControl,, RunLibreOffice, 0
+		GuiControl,, RunOutlook, 0
+		GuiControl,, RunSpotify, 0
+		GuiControl,, Runmsconfig, 0
+		GuiControl,, RunTaskManager, 0
+		GuiControl,, RunLoadTabs, 0
+	return
 
 }
 
