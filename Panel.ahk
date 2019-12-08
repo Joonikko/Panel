@@ -18,7 +18,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui,Tab, Main
 	Gui,Add,Button,x10 y35 w40 h30,		CMD
 	Gui,Add,Button,x+0.5 yp h30,		PS
-	Gui,Add,Button,x+0.5 yp h30 ,		Control
+	Gui,Add,Button,x+0.5 yp h30,		Control
 	Gui,Add,Button,x+0.5 yp h30 		gShowCPUGraph, CPU Graph
 
 	Gui,Add,Button,x10 y+2 h30,			Task Manager
@@ -117,7 +117,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui,Add,Checkbox,x230 y+0.5 w90 h20  	vInstallMalwarebytes,    	Malwarebytes
 	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vInstallRevoUninstaller, 	Revo Unins.
 	Gui,Add,Checkbox,x230 y+0.5 w100 h20  	vInstallTreeSizeFree, 		TreeSizeFree
-
 	; COL 4
 	Gui,Add,Checkbox,x330 y30 w80 h20   	vInstallNotepadplusplus, 	Notepad++
 	Gui,Add,Checkbox,x330 y+0.5 w100 h20  	vInstallVisualStudioCode,	VS Code
@@ -149,7 +148,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	; Gui,Add,Button,x470 y+1 w80 h27  		gInstallChoco2,   			PS Install
 	Gui,Add,Button,x470 y+10 w80 h27  		gChocoDefaults,    			Defaults
 	Gui,Add,Button,x470 y+1 w80 h27  		gChocoClear,    			Clear
-
 	Gui,Add,Button,x470 y+1 w80 h27			gChocoList,					List installed
 	Gui,Add,Button,x470 y+1 w80 h27  		gChocoUpdate,   			Update All
 	Gui,Add,Button,x470 y+10 w80 h35,           						Install
@@ -162,8 +160,8 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 
 	Win32_BaseBord()
 	{
-			for objItem in ComObjGet("winmgmts:\\.\root\CIMV2").ExecQuery("SELECT * FROM Win32_BaseBoard")
-					return { 1 : objItem.Manufacturer, 2 : objItem.Product }
+		for objItem in ComObjGet("winmgmts:\\.\root\CIMV2").ExecQuery("SELECT * FROM Win32_BaseBoard")
+			return { 1 : objItem.Manufacturer, 2 : objItem.Product }
 	}
 
 	Win32_BB := Win32_BaseBord()
@@ -186,25 +184,34 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 		VersionNumber = Windows 8.1
 		}
 	if (BuildNum = 10240){
-		VersionNumber = 1507 (Released 2015-07-29) Not supported by MS Anymore
+		VersionNumber = 1507. July 29, 2015. Not supported by MS Anymore
 		}
 	if (BuildNum = 10586){
-		VersionNumber = 1511 November Update (Released 2015-11-10)
+		VersionNumber = 1511 November Update. November 10, 2015 . Not supported by MS Anymore. Please update.
 		}
 	if (BuildNum = 14393){
-		VersionNumber = 1607 Anniversary Update (Released 2016-08-02)
+		VersionNumber = 1607 Anniversary Update. August 2, 2016. Not supported by MS Anymore. Please update.
 		}
 	if (BuildNum = 15063){
-		VersionNumber = 1703 Creators Update (Released 2017-04-05)
+		VersionNumber = 1703 Creators Update. April 5, 2017. Not supported by MS Anymore. Please update.
 		}
 	if (BuildNum = 16299){
-		VersionNumber = 1709 Fall Creators Update (Released 2017-10-17)
+		VersionNumber = 1709 Fall Creators Update. October 17, 2017. Not supported by MS Anymore. Please update.
 		}
 	if (BuildNum = 17134){
-		VersionNumber = 1803 April 2018 Update (Released 2018-04-16)
+		VersionNumber = 1803 April 2018 Update. April 30, 2018. Not supported by MS Anymore. Please update.
 		}
-	if (BuildNum > 17134){
-		VersionNumber = >17134
+	if (BuildNum = 17763){
+		VersionNumber = 1809 October 2018 Update
+		}
+	if (BuildNum = 18362){
+		VersionNumber = 1903 May 2019 Update
+		}
+	if (BuildNum = 18363){
+		VersionNumber = 1909 November 2019 Update
+		}
+	if (BuildNum > 18363){
+		VersionNumber = >18363 Newer than November 2019 update
 		}
 
 	Gui, Font, Bold
@@ -217,14 +224,14 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 							. "IP Address:`t" a_ipaddress1 "`n`n"
 							. "CPU Model:`t" CPUName "`n"
 							. "OS Name: `t" OSName "`n"
-							. "Build Number: `t" BuildNum . "  -  Version " . VersionNumber "`n"
+							. "Build Number: `t" BuildNum . "  -  " . VersionNumber "`n"
 							. "Version: `t" WinVersion "`n`n"
 							. "Display: `t" A_ScreenWidth " x " A_ScreenHeight " @ " A_ScreenDPI " DPI`n"
 
 	Win32_VideoController()
 	{
-			for objItem in ComObjGet("winmgmts:\\.\root\CIMV2").ExecQuery("SELECT * FROM Win32_VideoController")
-					return { 1 : objItem.AdapterCompatibility, 2 : objItem.Description }
+		for objItem in ComObjGet("winmgmts:\\.\root\CIMV2").ExecQuery("SELECT * FROM Win32_VideoController")
+			return { 1 : objItem.AdapterCompatibility, 2 : objItem.Description }
 	}
 	Win32_VC := Win32_VideoController()
 
@@ -232,9 +239,8 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui, Add, Text, x20 y220, GPU Information
 	Gui, Font, norm
 	Gui, Add, Text, x20 y240, % "Manufacturer:`t" Win32_VC[1] "`n"
-					. "Modell:`t`t"     Win32_VC[2]
-
-	Gui, Add, Text, x450 y40, Panel v1.06
+								. "Modell:`t`t"     Win32_VC[2]
+	Gui, Add, Text, x450 y40, Panel v1.07
 }
 
 { ; GUI HOTKEYS TAB
@@ -247,7 +253,6 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui, Add, Text, xm y+4, Alt+§  -  Switch windows
 	Gui, Add, Text, xm y+4, Alt+L/R Mouse  -  Alt-drag
 	Gui, Add, Text, xm y+4, Ctrl+Q  -  Send Alt-F4
-	; Gui, Add, Text, xm y+4, Ctrl+H  -  Minimize window
 
 	Gui, Font, Bold
 	Gui, Add, Text, x170 y30, Explorer
@@ -268,14 +273,11 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 	Gui, Font, Norm
 	Gui, Add, Text, xp y+4, F1  -  Cmd.exe
 	Gui, Add, Text, xp y+4, F2  -  Run -prompt
-	; Gui, Add, Text, xp y+4, F3  -
-	; Gui, Add, Text, xp y+4, F4  -
 	Gui, Add, Text, xp y+4, F5  -  Reload
 	Gui, Add, Text, xp y+4, F6  -  Reload as admin
 	Gui, Add, Text, xp y+4, F7  -  WUMT
 	Gui, Add, Text, xp y+4, F8  -  CCleaner
 	Gui, Add, Text, xp y+4, F9  -  Windows Update
-	; Gui, Add, Text, xp y+4, F10  -
 	Gui, Add, Text, xp y+4, F11  - Show CPU usage graph
 	Gui, Add, Text, xp y+4, F12  - Show folders GUI
 	Gui, Add, Text, xp y+4, Alt+Q  -  UAC Settings
@@ -321,9 +323,7 @@ Gui,Add,Tab3,x0 y0 w590 h290 vTabName,Main|Install|System Information|Hotkeys|Ru
 
 }
 
-
 return
-
 
 { ; WindowShade
 	!SC056::
@@ -1060,7 +1060,6 @@ return
 
 	F1::Run *RunAs Cmd.exe
 	F2::Send #r
-	; F3::Run %A_ScriptDir%/Removable.exe
 	F5::Reload
 
 	F6::
@@ -1078,12 +1077,6 @@ return
 	F9::
 		Run, control /name Microsoft.WindowsUpdate
 	return
-
-	; F10::
-	;   FileRead, Clipboard, %A_ScriptDir%/hosts.txt
-	;   ClipWait
-	;   clipboard = %clipboard%
-	; return
 
 	Escape::Exitapp
 
@@ -1143,18 +1136,8 @@ return
 		Return ( ( SystemTime - IdleTime ) * 100 ) // SystemTime,    PIT := CIT,    PKT := CKT,    PUT := CUT
 	}
 
-
-		; MemoryLoad()
-		; {
-		; 	static MEMORYSTATUSEX, init := NumPut(VarSetCapacity(MEMORYSTATUSEX, 64, 0), MEMORYSTATUSEX, "uint")
-		; 	if !(DllCall("GlobalMemoryStatusEx", "ptr", &MEMORYSTATUSEX))
-		; 		throw Exception("Call to GlobalMemoryStatusEx failed: " A_LastError, -1)
-		; 	return NumGet(MEMORYSTATUSEX, 4, "UInt")
-		; }
-
 		#Include XGraph.ahk
 return
-
 
 }
 
@@ -1528,7 +1511,6 @@ return
 	If DoubleAlt
 	{
 		MouseGetPos,,,KDE_id
-		; Toggle between maximized and restored state.
 		WinGet,KDE_Win,MinMax,ahk_id %KDE_id%
 		If KDE_Win
 			WinRestore,ahk_id %KDE_id%
